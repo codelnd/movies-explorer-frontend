@@ -1,0 +1,33 @@
+.nav-tab {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+
+.nav-tab-button {
+    display: block;
+    border: none;
+    outline: none;
+    background: #E8E8E8;
+    border-radius: 10px;
+    width: 96px;
+    height: 36px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    align-items: center;
+    color: #FFF;
+}
+
+@media screen and (max-width: 767px) {
+    .nav-tab {
+        gap: 6px;
+        padding-bottom: 17px;
+    }
+
+    .nav-tab-button {
+        width: 82px;
+        height: 26px;
+        font-size: 10px;
+    }
+}
