@@ -1,6 +1,5 @@
 .index-title {
     margin: 0;
-    padding-top: 110px;
     font-weight: 400;
     font-size: 22px;
     line-height: 27px;
@@ -8,4 +7,10 @@
     color: #000;
     padding-bottom: 23px;
     border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 767px) {
+    .index-title {
+        padding-bottom: 28px;
+    }
 }
