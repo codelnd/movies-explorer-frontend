@@ -5,6 +5,8 @@ import Promo from "../Promo/Promo";
 import NavTab from "../NavTab/NavTab";
 import AboutProject from "../AboutProject/AboutProject";
 import IndexTitle from "../IndexTitle/IndexTitle";
+import Techs from "../Techs/Techs";
+import AboutMe from "../AboutMe/AboutMe";
 
 function Page() {
     return (
@@ -19,6 +21,16 @@ function Page() {
                         title={'О проекте'}
                     />
                 </AboutProject>
+                <Techs>
+                    <IndexTitle
+                        title={'Технологии'}
+                    />
+                </Techs>
+                <AboutMe>
+                    <IndexTitle
+                    title={'Студент'}
+                    />
+                </AboutMe>
             </div>
         </div>
     );

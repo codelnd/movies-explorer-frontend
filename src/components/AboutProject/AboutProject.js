@@ -3,7 +3,7 @@ import './AboutProject.css'
 
 function AboutProject(props) {
     return (
-        <section className="about-project__container">
+        <section className="about-project">
             {props.children}
             <div className="about-project__wrapper">
                 <article>

@@ -1,4 +1,4 @@
-.promo__container {
+.promo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 @media screen and (max-width: 1023px) {
-    .promo__container {
+    .promo {
         width: 94.79%;
         padding: 350px 0 30px 0;
         gap: 314px;
@@ -38,7 +38,7 @@
 }
 
 @media screen and (max-width: 767px) {
-    .promo__container {
+    .promo {
         padding: 220px 0 17px 0;
         gap: 212px;
     }

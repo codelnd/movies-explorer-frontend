@@ -1,8 +1,8 @@
-.about-project__container {
+.about-project {
     max-width: 1140px;
     margin: auto;
     padding-top: 110px;
-    /*padding-bottom: 110px;*/
+    padding-bottom: 110px;
 }
 
 .about-project__wrapper {
@@ -74,7 +74,7 @@
 
 
 @media screen and (max-width: 1023px) {
-    .about-project__container {
+    .about-project {
         padding: 90px 50px 90px 50px;
     }
 
@@ -92,7 +92,7 @@
 }
 
 @media screen and (max-width: 767px) {
-    .about-project__container {
+    .about-project {
         padding: 70px 18px 70px 18px;
     }
 

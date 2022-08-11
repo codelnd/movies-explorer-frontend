@@ -1,4 +1,4 @@
-.header__container {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,6 +30,7 @@
     border-radius: 3px;
     width: 77px;
     height: 32px;
+    cursor: pointer;
 }
 
 .header__signin_button {
@@ -44,16 +45,17 @@
     border-radius: 3px;
     width: 76px;
     height: 32px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1023px) {
-    .header__container {
+    .header {
         padding: 18px 30px 38px 30px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .header__container {
+    .header {
         padding: 18px 14px 32px 14px;
     }
 
