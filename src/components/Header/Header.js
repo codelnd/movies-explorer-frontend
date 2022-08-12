@@ -4,7 +4,7 @@ import './Header.css'
 
 function Header() {
     return (
-        <section className="header">
+        <header className="header">
             <a href="index.html">
             <img className="header__logo" alt="логотип" src={logo}/>
             </a>
@@ -12,7 +12,7 @@ function Header() {
             <button className="header__signup_button">Регистрация</button>
             <button className="header__signin_button">Войти</button>
             </div>
-        </section>
+        </header>
     );
 }
 
