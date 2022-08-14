@@ -1,9 +1,9 @@
 import React from 'react';
 import './Movies.css'
 
-function Movies() {
+function Movies(props) {
     return (
-        <>Movies</>
+            <>Movies</>
     );
 }
 

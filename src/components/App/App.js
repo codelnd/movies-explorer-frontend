@@ -1,5 +1,4 @@
 import React from 'react';
-import {Route, Switch} from "react-router-dom";
 import './App.css';
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -10,6 +9,7 @@ import Profile from "../Profile/Profile";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import {Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -17,29 +17,15 @@ function App() {
         <div className="page">
             <div className="page__container">
                 <Header/>
-                <Switch>
-                    <Route exact path="/">
-                        <Main/>
-                    </Route>
-                    <Route path="/movies">
-                        <Movies/>
-                    </Route>
-                    <Route path="/saved-movies">
-                        <SavedMovies/>
-                    </Route>
-                    <Route path="/profile">
-                        <Profile/>
-                    </Route>
-                    <Route path="/signin">
-                        <Login/>
-                    </Route>
-                    <Route path="/signup">
-                        <Register/>
-                    </Route>
-                    <Route path="*">
-                        <PageNotFound/>
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/movies" element={<Movies/>}/>
+                    <Route path="/saved-movies" element={<SavedMovies/>}/>
+                    <Route path="/profile" element={<Profile/>}/>
+                    <Route path="/signin" element={<Login/>}/>
+                    <Route path="/signup" element={<Register/>}/>
+                    <Route path="*" element={<PageNotFound/>}/>
+                </Routes>
                 <Footer/>
             </div>
         </div>

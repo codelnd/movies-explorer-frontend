@@ -24,6 +24,10 @@
     transform: scale(1.05);
 }
 
+.header__link-underline {
+    text-decoration: none;
+}
+
 .header__films-button {
     display: block;
     border: none;
@@ -54,6 +58,7 @@
 .header-buttons {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .header__signup-button {
