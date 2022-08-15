@@ -3,7 +3,9 @@ import './SavedMovies.css'
 
 function SavedMovies() {
     return (
-        <>SavedMovies</>
+        <section className="saved-movies">
+
+        </section>
     );
 }
 

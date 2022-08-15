@@ -1,0 +1,54 @@
+.card__item {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 364px;
+    height: 271px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.card__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+}
+
+.card__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000;
+}
+
+.card__duration {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    align-items: center;
+    color: #A0A0A0;
+    margin: 9px 0 0;
+}
+
+.card__save-button {
+    padding: 0;
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 39px;
+    background-size: cover;
+    background: transparent url(../../images/save_disable.svg) no-repeat center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.card__wrapper:hover .card__save-button {
+    background: url(../../images/save.svg) no-repeat center;
+}
+
+.card__img {
+    display: block;
+}

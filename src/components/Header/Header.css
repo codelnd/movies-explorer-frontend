@@ -106,9 +106,37 @@
     cursor: pointer;
 }
 
+.header-burger__button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    background-size: cover;
+    background: transparent url(../../images/burger.svg) no-repeat center;
+    display: none;
+}
+
 @media screen and (max-width: 1023px) {
     .header {
         padding: 18px 30px 38px 30px;
+    }
+
+    .header__films-button {
+        display: none;
+    }
+
+    .header__saved_films-button {
+        display: none;
+    }
+
+    .header__account-button {
+        display: none;
+    }
+
+    .header-burger__button {
+        display: block;
+        position: relative;
     }
 }
 
