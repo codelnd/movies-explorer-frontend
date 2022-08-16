@@ -4,7 +4,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    outline: 1px solid purple;
 }
 
 .not-found__title {

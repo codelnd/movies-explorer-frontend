@@ -2,11 +2,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 364px;
-    height: 271px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    width: 100%;
 }
 
 .card__wrapper {
@@ -45,10 +41,31 @@
     cursor: pointer;
 }
 
-.card__wrapper:hover .card__save-button {
+.card__save-button:hover {
+    transform: scale(1.25);
+}
+
+.card__save-button:active {
     background: url(../../images/save.svg) no-repeat center;
 }
 
 .card__img {
     display: block;
+    width: 100%;
+    height: 203px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+@media screen and (max-width: 1023px) {
+    .card__img {
+        height: 190px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card__img {
+        height: 168px;
+    }
 }
