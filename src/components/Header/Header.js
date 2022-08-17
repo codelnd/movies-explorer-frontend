@@ -5,7 +5,7 @@ import UnloggedHeader from "../UnloggedHeader/UnloggedHeader";
 
 function Header() {
 
-    const isLogged = true;
+    const isLogged = false;
 
     return (
             isLogged ? <LoggedHeader/> : <UnloggedHeader/>

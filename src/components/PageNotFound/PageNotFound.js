@@ -2,7 +2,7 @@ import React from 'react';
 import './PageNotFound.css'
 import {useNavigate} from "react-router-dom";
 
-function PageNotFound(props) {
+function PageNotFound() {
 
     const navigate = useNavigate();
     const goBack = () => navigate(-1);

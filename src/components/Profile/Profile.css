@@ -1,0 +1,116 @@
+.profile {
+    margin: auto;
+    max-width: 410px;
+    padding: 74px 0 70px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000;
+}
+
+.profile__form {
+    width: 100%;
+    margin-top: 123px;
+}
+
+.profile__label {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__label_name {
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 16px;
+}
+
+.profile__label_email {
+    margin-top: 17px;
+}
+
+.input-profile {
+    border: none;
+    outline: none;
+    display: block;
+    text-align: right;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000;
+}
+
+.input-profile::placeholder {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000;
+}
+
+.profile__buttons {
+    margin-top: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile__button {
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000;
+}
+
+.profile__button:hover {
+	opacity: 0.6;
+}
+
+.profile__button_logout {
+    color: #FF4062;
+}
+
+@media screen and (max-width: 1023px) {
+    .profile {
+        padding: 236px 0 269px 0;
+    }
+
+    .profile__form {
+        margin-top: 96px;
+    }
+
+    .profile__buttons {
+        margin-top: 210px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .profile {
+        max-width: 260px;
+        padding: 70px 0 40px 0;
+    }
+
+    .profile__form {
+        margin-top: 80px;
+    }
+
+    .profile__buttons {
+        margin-top: 379px;
+    }
+}
