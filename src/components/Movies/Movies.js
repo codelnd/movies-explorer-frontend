@@ -5,6 +5,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import NoResult from "../NoResult/NoResult";
 
 function Movies() {
     return (
@@ -13,6 +14,7 @@ function Movies() {
             <section className="movies">
                 <SearchForm/>
                 {/*<Preloader/>*/}
+                {/*<NoResult/>*/}
                 <MoviesCardList/>
             </section>
             <Footer/>
