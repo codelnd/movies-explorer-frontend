@@ -18,7 +18,7 @@ function Profile() {
                                onChange={(evt) => setName(evt.target.value)} value={name}/>
                     </label>
                     <label className="profile__label profile__label_email">E-mail
-                        <input className="input-profile input-profile_type_email" type="text"
+                        <input className="input-profile input-profile_type_email" type="email"
                                placeholder="Введите e-mail" onChange={(evt) => setEmail(evt.target.value)}
                                value={email}/>
                     </label>

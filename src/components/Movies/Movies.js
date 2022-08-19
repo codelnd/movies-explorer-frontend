@@ -12,8 +12,8 @@ function Movies() {
             <Header/>
             <section className="movies">
                 <SearchForm/>
+                {/*<Preloader/>*/}
                 <MoviesCardList/>
-                <Preloader/>
             </section>
             <Footer/>
         </>

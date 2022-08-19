@@ -1,13 +1,21 @@
 import React from 'react';
 import './Register.css'
-import logo from '../../images/logo.svg'
+import FormInput from "../FormInput/FormInput";
+import Auth from "../Auth/Auth";
 
 function Register() {
     return (
-        <section className="register">
-            <img className="header__logo" alt="логотип" src={logo}/>
-            <h2 className="register__title">Добро пожаловать!</h2>
-        </section>
+        <Auth title='Добро пожаловать!' name='register' button='Зарегистрироваться' question='Уже зарегистрированы?' link='Войти' path='/signin'>
+            <FormInput type='text' name='name' labelText='Имя' minLength='2' maxLength='30'
+                       placeholder='Как Вас зовут?'/>
+            <span className="auth__error-message auth__error-message_invisible">Что-то пошло не так...</span>
+            <FormInput type='email' name='email' labelText='E-mail'
+                       placeholder='Введите e-mail'/>
+            <span className="auth__error-message auth__error-message_invisible">Что-то пошло не так...</span>
+            <FormInput type='password' name='password' labelText='Пароль'
+                       placeholder='Придумайте пароль'/>
+            <span className="auth__error-message auth__error-message_invisible">Что-то пошло не так...</span>
+        </Auth>
     );
 }
 

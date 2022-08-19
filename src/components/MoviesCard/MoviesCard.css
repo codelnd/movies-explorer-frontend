@@ -8,6 +8,7 @@
 .card__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 14px;
 }
 
@@ -28,7 +29,7 @@
     margin: 9px 0 0;
 }
 
-.card__save-button {
+.card__button_save {
     padding: 0;
     outline: none;
     border: none;
@@ -37,17 +38,43 @@
     background-size: cover;
     background: transparent url(../../images/save_disable.svg) no-repeat center;
     border-radius: 50%;
-    transition: all 0.2s;
+    transition: all 0.1s;
     cursor: pointer;
 }
 
-.card__save-button:hover {
+.card__button_liked {
+    padding: 0;
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 39px;
+    background-size: cover;
+    background: url(../../images/save.svg) no-repeat center;
+    border-radius: 50%;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.card__button_remove {
+    padding: 0;
+    outline: none;
+    border: none;
+    width: 8px;
+    height: 8px;
+    background-size: cover;
+    background: transparent url(../../images/remove.svg) no-repeat center;
+    border-radius: 50%;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.card__button_save:hover {
     transform: scale(1.25);
 }
 
-.card__save-button:active {
-    background: url(../../images/save.svg) no-repeat center;
-}
+/*.card__button:active {*/
+/*    background: url(../../images/save.svg) no-repeat center;*/
+/*}*/
 
 .card__img {
     display: block;
@@ -58,7 +85,7 @@
 }
 
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
     .card__img {
         height: 190px;
     }

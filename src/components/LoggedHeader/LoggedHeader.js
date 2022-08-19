@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import logo from '../../images/logo.svg'
 import {Link} from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
+import Logo from "../Logo/Logo";
 
 function LoggedHeader() {
 
@@ -11,9 +11,7 @@ function LoggedHeader() {
         <>
             <header className="header">
                 <div className="header__logo-wrapper">
-                    <Link to="/">
-                        <img className="header__logo" alt="логотип" src={logo}/>
-                    </Link>
+                    <Logo/>
                     <Link to="/movies" className="header__link-underline">
                         <button className="header__films-button">Фильмы</button>
                     </Link>

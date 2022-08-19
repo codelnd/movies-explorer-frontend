@@ -37,3 +37,23 @@
     cursor: pointer;
     margin-top: 184px;
 }
+
+@media screen and (max-width: 767px) {
+    .not-found__title {
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 97px;
+    }
+
+    .not-found__paragraph {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 10px;
+    }
+
+    .not-found__button {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 284px;
+    }
+}

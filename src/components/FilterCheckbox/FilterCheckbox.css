@@ -9,7 +9,7 @@
 }
 
 .checkbox__label:hover {
-    filter: brightness(1.05);
+    filter: brightness(1.02);
 }
 
 .input_type_checkbox {
@@ -21,7 +21,7 @@
     width: 36px;
     height: 20px;
     border-radius: 36px;
-    background-color: #A0A0A0;
+    background-color: #E8E8E8;
     transition-duration: 0.3s;
 }
 

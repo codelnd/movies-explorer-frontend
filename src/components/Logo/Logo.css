@@ -1,0 +1,9 @@
+.logo {
+    display: block;
+    transition: all 0.4s linear;
+}
+
+.logo:hover {
+    /*transform: scale(1.1);*/
+    transform: rotate(360deg);
+}

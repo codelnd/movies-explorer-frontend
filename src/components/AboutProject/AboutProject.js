@@ -1,10 +1,10 @@
 import React from 'react';
 import './AboutProject.css'
 
-function AboutProject(props) {
+function AboutProject({children, projectRef}) {
     return (
-        <section className="about-project">
-            {props.children}
+        <section className="about-project" ref={projectRef}>
+            {children}
             <div className="about-project__wrapper">
                 <article>
                     <h3 className="about-project__title-mini">Дипломный проект включал 5 этапов</h3>

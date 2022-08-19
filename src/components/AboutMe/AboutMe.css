@@ -67,9 +67,12 @@
     grid-area: photo;
     justify-self: end;
     align-self: end;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1090px) {
 
     .about-me {
         padding: 90px 50px 90px 50px;

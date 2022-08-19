@@ -1,33 +1,3 @@
-.preloader__section {
-    max-width: 1140px;
-    margin: auto;
-    padding-top: 61px;
-    padding-bottom: 89px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.preloader__button {
-	display: block;
-	border: 1px solid #E8E8E8;;
-	outline: none;
-	background: none;
-	cursor: pointer;
-	transition: opacity 0.2s ease-in;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    color: #000;
-    width: 320px;
-    height: 36px;
-}
-
-.preloader__button:hover {
-	opacity: 0.8;
-}
-
 @keyframes preloader-inside-white {
     0% {
         -webkit-transform: scale(0, 0);
@@ -76,7 +46,8 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .preloader__container {
@@ -91,7 +62,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #FF6838;
+    background: #E8E8E8;
     border-radius: 50px;
 }
 
@@ -113,19 +84,8 @@
 
 .preloader__round::before {
     z-index: 10;
-    background: #FF6838;
+    background: #E8E8E8;
     animation: preloader-inside-red 1s ease-in-out infinite;
 }
 
-@media screen and (max-width: 1023px) {
-    .preloader__section {
-        padding-top: 50px;
-        padding-bottom: 80px;
-    }
-}
 
-@media screen and (max-width: 767px) {
-    .preloader__button {
-        width: 240px;
-    }
-}

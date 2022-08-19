@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './Main.css'
 import Promo from "../Promo/Promo";
 import NavTab from "../NavTab/NavTab";
@@ -10,24 +10,29 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 function Main() {
+
+    const projectRef = useRef();
+    const techsRef = useRef();
+    const studentRef = useRef();
+
     return (
         <>
             <Header/>
             <main className="main">
                 <Promo>
-                    <NavTab/>
+                    <NavTab projectRef={projectRef} techsRef={techsRef} studentRef={studentRef}/>
                 </Promo>
-                <AboutProject>
+                <AboutProject projectRef={projectRef}>
                     <IndexTitle
                         title={'О проекте'}
                     />
                 </AboutProject>
-                <Techs>
+                <Techs techsRef={techsRef}>
                     <IndexTitle
                         title={'Технологии'}
                     />
                 </Techs>
-                <AboutMe>
+                <AboutMe studentRef={studentRef}>
                     <IndexTitle
                         title={'Студент'}
                     />

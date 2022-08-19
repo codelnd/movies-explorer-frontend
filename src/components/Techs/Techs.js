@@ -1,11 +1,11 @@
 import React from 'react';
 import './Techs.css'
 
-function Techs(props) {
+function Techs({children, techsRef}) {
     return (
-        <section className="techs">
+        <section className="techs" ref={techsRef}>
             <div className="techs__container">
-                {props.children}
+                {children}
                 <div className="techs__wrapper">
                     <h2 className="techs__title">7 технологий</h2>
                     <p className="techs__paragraph">На курсе веб-разработки мы освоили технологии, которые применили в

@@ -15,15 +15,6 @@
     gap: 16px;
 }
 
-.header__logo {
-    display: block;
-    transition: all 0.5s ease 0s;
-}
-
-.header__logo:hover {
-    transform: scale(1.05);
-}
-
 .header__link-underline {
     text-decoration: none;
 }
@@ -117,7 +108,7 @@
     display: none;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
     .header {
         padding: 18px 30px 38px 30px;
     }

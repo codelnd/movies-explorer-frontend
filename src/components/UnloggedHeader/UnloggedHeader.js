@@ -1,15 +1,13 @@
 import React from 'react';
-import logo from '../../images/logo.svg'
 import {Link} from "react-router-dom";
+import Logo from "../Logo/Logo";
 
 function LoggedHeader() {
 
     return (
         <header className="header">
             <div className="header__logo-wrapper">
-                <Link to="/">
-                    <img className="header__logo" alt="логотип" src={logo}/>
-                </Link>
+                <Logo/>
             </div>
             <div className="header-buttons">
                 <Link to="/signup" className="header__link-underline">

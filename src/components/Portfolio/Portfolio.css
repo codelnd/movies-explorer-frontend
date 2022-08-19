@@ -28,7 +28,9 @@
 .about-me__list-item {
     display: block;
     position: relative;
-    margin-top: 40px;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 19px;
+    margin-top: 20px;
 }
 
 .about-me__list-item:first-child {
@@ -56,7 +58,7 @@
     right: 0;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
     .about-me__list {
         font-size: 28px;
     }

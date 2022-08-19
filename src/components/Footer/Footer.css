@@ -49,7 +49,7 @@
     color: #000;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
     .footer {
         padding: 79px 30px 20px 30px;
     }

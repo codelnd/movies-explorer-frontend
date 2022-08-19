@@ -1,8 +1,12 @@
 import React from 'react';
 import MoviesCard from "../MoviesCard/MoviesCard";
 import './MoviesCardList.css'
+import {useLocation} from "react-router-dom";
 
 const MoviesCardList = () => {
+
+    const location = useLocation()
+
     return (
         <section className="movies-cardlist">
             <ul className="card__list">
@@ -19,6 +23,7 @@ const MoviesCardList = () => {
                 <MoviesCard/>
                 <MoviesCard/>
             </ul>
+            <button className={`preloader__button preloader__button_${location.pathname === '/saved-movies' ? 'invisible' : ''}`} >Ещё</button>
         </section>
     );
 };
