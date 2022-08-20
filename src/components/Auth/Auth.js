@@ -16,7 +16,7 @@ const Auth = ({children, title, name, button, question, link, path, login}) => {
     return (
         <section className="auth">
             <Link to="/" className="logo-link__auth">
-                <img className="logo-link" alt="логотип" src={logo}/>
+                <img className="logo" src={logo} alt="логотип"></img>
             </Link>
             <h2 className="auth__title">{title}</h2>
             <form className="auth__form" name={name} id={name} onSubmit={handleSubmit}>

@@ -60,24 +60,6 @@
     color: #FFF;
 }
 
-@media screen and (max-width: 767px) {
-    .nav__link_type_register {
-        font-size: 10px;
-        line-height: 16px;
-    }
-
-    .nav__link_type_login {
-        width: 52px;
-        height: 26px;
-        font-size: 10px;
-        line-height: 16px;
-    }
-
-    .nav__outside {
-        gap: 14px;
-    }
-}
-
 .nav__link_type_home {
     display: none;
 }
@@ -224,6 +206,22 @@
         visibility: hidden;
         opacity: 0;
         transition: all 0.3s ease-in-out;
+    }
+
+    .nav__link_type_register {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .nav__link_type_login {
+        width: 52px;
+        height: 26px;
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .nav__outside {
+        gap: 14px;
     }
 
 }

@@ -10,9 +10,6 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import {Routes, Route} from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 
-// Плавная анимация страниц, infoPopup, валидация формы
-
-
 function App() {
 
     const { loggedIn, login, logout } = useLogin();
