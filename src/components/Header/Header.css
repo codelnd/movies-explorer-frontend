@@ -1,154 +1,25 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 18px;
-    max-width: 1170px;
-    margin: auto;
-    padding-bottom: 38px;
-    box-sizing: border-box;
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.header__logo-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+.header__wrapper {
+  padding: 18px 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.header__link-underline {
-    text-decoration: none;
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    padding: 18px 30px;
+  }
 }
 
-.header__films-button {
-    display: block;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 0;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 18px;
-    color: #000;
-    margin-left: 28px;
-    cursor: pointer;
+@media screen and (max-width: 480px) {
+  .header__wrapper {
+    padding: 18px 14px;
+  }
 }
 
-.header__saved_films-button {
-    display: block;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 0;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 18px;
-    color: #000;
-    cursor: pointer;
-}
-
-.header-buttons {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.header__signup-button {
-    padding: 0;
-    display: block;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: #000;
-    background: transparent;
-    border-radius: 3px;
-    width: 77px;
-    height: 32px;
-    cursor: pointer;
-}
-
-.header__signin-button {
-    padding: 0;
-    display: block;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: #FFFFFF;
-    background: #000;
-    border-radius: 3px;
-    width: 76px;
-    height: 32px;
-    cursor: pointer;
-}
-
-.header__account-button {
-    padding: 0;
-    display: block;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000;
-    background: transparent;
-    cursor: pointer;
-}
-
-.header-burger__button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    width: 28px;
-    height: 28px;
-    background-size: cover;
-    background: transparent url(../../images/burger.svg) no-repeat center;
-    display: none;
-}
-
-@media screen and (max-width: 1279px) {
-    .header {
-        padding: 18px 30px 38px 30px;
-    }
-
-    .header__films-button {
-        display: none;
-    }
-
-    .header__saved_films-button {
-        display: none;
-    }
-
-    .header__account-button {
-        display: none;
-    }
-
-    .header-burger__button {
-        display: block;
-        position: relative;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .header {
-        padding: 18px 14px 32px 14px;
-    }
-
-    .header-buttons {
-        gap: 14px;
-    }
-
-    .header__signup-button {
-        font-size: 10px;
-        width: 64px;
-        height: 26px;
-    }
-
-    .header__signin-button {
-        font-size: 10px;
-        width: 54px;
-        height: 26px;
-    }
-}

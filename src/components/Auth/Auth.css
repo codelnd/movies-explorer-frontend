@@ -85,8 +85,9 @@
         padding: 56px 0 30px 0;
     }
 
-    .logo_auth {
-        margin: auto;
+    .logo-link__auth {
+        display: flex;
+        justify-content: center;
     }
 
     .auth__title {

@@ -1,99 +1,239 @@
-.navigation {
-    position: fixed;
-    width: 520px;
-    height: 100%;
-    top: 0;
-    right: 0;
-    transform: translateX(100%);
-    transition: all 0.2s;
-    z-index: 2;
+.nav {
+    min-width: calc(100% - 38px);
+    position: relative;
 }
 
-.navigation.active {
-    transform: translateX(0);
-}
-
-.overlay {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    right: 520px;
-    transition: all 0.2s;
-}
-
-.navigation__content {
-    width: 520px;
-    height: 100vh;
-    background-color: #fff;
+.nav__outside {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
+    gap: 30px;
+}
+
+.nav__button {
+    display: none;
+}
+
+.nav__inside {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    transition: all 0.2s;
-}
-
-.navigation__close-button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    width: 22px;
-    height: 22px;
-    background-size: cover;
-    background: transparent url(../../images/close.svg) no-repeat center;
-    position: absolute;
-    top: 22px;
-    right: 22px;
-}
-
-.navigation__link {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    color: #000;
-    border-bottom: 2px solid transparent;
-}
-
-.navigation__top {
-    margin-top: 159px;
-    display: flex;
+    min-width: 100%;
     align-items: center;
-    flex-direction: column;
-    gap: 26px;
 }
 
-.navigation__link_bottom {
-    font-size: 14px;
+.nav__link {
+    padding: 0;
+    text-decoration: none;
+    transition: all .2s ease-in;
+    color: #000;
+}
+
+.nav__link:hover {
+    color: #A0A0A0;
+    cursor: pointer;
+}
+
+.nav__link.active {
+    font-weight: 500;
+    color: #000;
+}
+
+.nav__link_type_register {
+    font-weight: 500;
+    font-size: 12px;
     line-height: 16px;
-    margin-bottom: 90px;
+    color: #000;
 }
 
-.active {
-   border-bottom: 2px solid #000;
+.nav__link_type_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 32px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 3px;
+    background-color: #000;
+    color: #FFF;
 }
 
 @media screen and (max-width: 767px) {
-    .navigation {
-        width: 100%;
+    .nav__link_type_register {
+        font-size: 10px;
+        line-height: 16px;
     }
 
-    .navigation__content {
-        width: 100%;
+    .nav__link_type_login {
+        width: 52px;
+        height: 26px;
+        font-size: 10px;
+        line-height: 16px;
     }
 
-    .navigation__top {
-        margin-top: 144px;
-        gap: 22px;
-    }
-
-    .overlay {
-        background:transparent;
-    }
-
-    .navigation__link_bottom {
-        margin-bottom: 54px;
+    .nav__outside {
+        gap: 14px;
     }
 }
 
+.nav__link_type_home {
+    display: none;
+}
+
+.nav__link_type_movies {
+    margin-left: 44px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 18px;
+    color: #000;
+}
+
+.nav__link_type_saved-movies {
+    margin-left: 16px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000;
+}
+
+.nav__link_type_profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+}
+
+.nav_invisible {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__inside {
+        min-height: 100vh;
+        min-width: 65vw;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 1;
+        visibility: visible;
+        transform: translateX(0);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .nav__inside_closed {
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .nav__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30%;
+    }
+
+    .nav__link.active {
+        border-bottom: 2px solid #000;
+    }
+
+    .nav__link_type_home {
+        display: inline;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 9px;
+    }
+
+    .nav__link_type_movies {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 9px 0;
+        font-weight: 500;
+    }
+
+    .nav__link_type_saved-movies {
+        margin: 9px 0 0;
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+    }
+
+    .nav__link_type_profile {
+        margin: 0 0 9% 0;
+        font-weight: 500;
+    }
+
+    .nav__button {
+        display: block;
+        width: 44px;
+        height: 44px;
+        border: none;
+        position: absolute;
+        top: -22px;
+        right: -8px;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: center;
+        padding: 0;
+        z-index: 2;
+    }
+
+    .nav__button:hover {
+        opacity: 0.4;
+        cursor: pointer;
+    }
+
+    .nav__button_invisible {
+        display: none;
+    }
+
+    .nav__button_type_burger {
+        background-image: url(../../images/burger.svg);
+        transition: all 0.15s ease-in-out;
+    }
+
+    .nav__button_type_close {
+        background-image: url(../../images/close.svg);
+        transition: all 0.15s ease-in-out;
+    }
+
+    .nav__overlay {
+        visibility: visible;
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        min-width: 100vw;
+        background-color: rgba(0, 0, 0, .3);
+        transition: all 0.3s ease-in-out;
+        z-index: 1;
+    }
+
+    .nav__overlay_invisible {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .nav__inside {
+        min-width: 100vw;
+    }
+
+    .nav__link_type_register {
+        font-size: 10px;
+    }
+}

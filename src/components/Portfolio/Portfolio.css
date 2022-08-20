@@ -31,6 +31,11 @@
     border-bottom: 1px solid #E8E8E8;
     padding-bottom: 19px;
     margin-top: 20px;
+    transition: all 0.3s linear;
+}
+
+.about-me__list-item:hover {
+    border-bottom: 1px solid #000;
 }
 
 .about-me__list-item:first-child {

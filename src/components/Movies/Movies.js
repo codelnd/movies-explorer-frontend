@@ -3,14 +3,15 @@ import './Movies.css'
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Preloader/Preloader";
+import NoResult from "../NoResult/NoResult";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import NoResult from "../NoResult/NoResult";
 
-function Movies() {
+function Movies({loggedIn, login}) {
+
     return (
         <>
-            <Header/>
+            <Header loggedIn={loggedIn} login={login}/>
             <section className="movies">
                 <SearchForm/>
                 {/*<Preloader/>*/}

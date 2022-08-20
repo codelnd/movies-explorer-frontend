@@ -9,7 +9,7 @@ import AboutMe from "../AboutMe/AboutMe";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-function Main() {
+function Main({loggedIn, login}) {
 
     const projectRef = useRef();
     const techsRef = useRef();
@@ -17,7 +17,7 @@ function Main() {
 
     return (
         <>
-            <Header/>
+            <Header loggedIn={loggedIn} login={login}/>
             <main className="main">
                 <Promo>
                     <NavTab projectRef={projectRef} techsRef={techsRef} studentRef={studentRef}/>

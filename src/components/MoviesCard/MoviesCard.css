@@ -59,22 +59,22 @@
     padding: 0;
     outline: none;
     border: none;
-    width: 8px;
-    height: 8px;
+    width: 24px;
+    height: 24px;
     background-size: cover;
     background: transparent url(../../images/remove.svg) no-repeat center;
     border-radius: 50%;
-    transition: all 0.1s;
+    transition: all 0.3s;
     cursor: pointer;
 }
 
 .card__button_save:hover {
-    transform: scale(1.25);
+    filter: invert(75%);
 }
 
-/*.card__button:active {*/
-/*    background: url(../../images/save.svg) no-repeat center;*/
-/*}*/
+.card__button_remove:hover {
+    transform: rotate(360deg);
+}
 
 .card__img {
     display: block;

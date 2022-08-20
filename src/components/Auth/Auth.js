@@ -1,16 +1,25 @@
 import React from 'react';
 import './Auth.css'
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from "../../images/logo.svg";
 
-const Auth = ({children, title, name, button, question, link, path}) => {
+const Auth = ({children, title, name, button, question, link, path, login}) => {
+
+    const navigate = useNavigate();
+
+    function handleSubmit(evt) {
+        evt.preventDefault();
+        login();
+        navigate('/');
+    }
+
     return (
         <section className="auth">
-            <Link to="/">
-                <img className="logo logo_auth" alt="логотип" src={logo}/>
+            <Link to="/" className="logo-link__auth">
+                <img className="logo-link" alt="логотип" src={logo}/>
             </Link>
             <h2 className="auth__title">{title}</h2>
-            <form className="auth__form" name={name} id={name}>
+            <form className="auth__form" name={name} id={name} onSubmit={handleSubmit}>
                 {children}
             </form>
             <button className="auth__button" type="submit" form={name}>{button}</button>

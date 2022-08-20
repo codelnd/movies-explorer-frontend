@@ -47,6 +47,11 @@
     font-size: 13px;
     line-height: 16px;
     color: #000;
+    transition: all 0.3s linear;
+}
+
+.footer__list-link:hover {
+    color: #a0a0a0;
 }
 
 @media screen and (max-width: 1279px) {

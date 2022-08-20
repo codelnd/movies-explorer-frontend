@@ -6,10 +6,11 @@
     font-size: 13px;
     line-height: 18px;
     color: #000;
+    transition: all 0.2s ease-in-out;
 }
 
 .checkbox__label:hover {
-    filter: brightness(1.02);
+    filter: brightness(1.03);
 }
 
 .input_type_checkbox {

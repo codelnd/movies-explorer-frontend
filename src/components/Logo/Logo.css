@@ -1,9 +1,10 @@
-.logo {
-    display: block;
-    transition: all 0.4s linear;
+.logo-link {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
 }
 
-.logo:hover {
-    /*transform: scale(1.1);*/
-    transform: rotate(360deg);
+.logo-link:hover {
+    transform: scale(1.05);
 }

@@ -17,6 +17,12 @@
     align-items: center;
     color: #FFF;
     cursor: pointer;
+    transition: all 0.35s ease-in-out;
+}
+
+.nav-tab-button:hover {
+    background: #000;
+    color: #FFF;
 }
 
 @media screen and (max-width: 767px) {

@@ -1,3 +1,16 @@
+.blink {
+    animation-name: blink;
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 .search-form-section {
     margin: auto;
     max-width: 1140px;
@@ -45,6 +58,10 @@
     position: absolute;
     top: 9px;
     left: 0;
+    animation-name: blink;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 
 .search-form__button {
@@ -56,6 +73,11 @@
     background: transparent url(../../images/find.svg) no-repeat center;
     margin-right: 30px;
     border-radius: 50%;
+    transition: all 0.1s linear;
+}
+
+.search-form__button:hover {
+    transform: scale(1.25);
 }
 
 @media screen and (max-width: 1279px) {
