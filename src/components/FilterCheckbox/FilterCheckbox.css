@@ -26,11 +26,11 @@
     transition-duration: 0.3s;
 }
 
-.input_type_checkbox:checked ~ .checkbox{
+.input_type_checkbox:checked ~ .checkbox {
     background-color: #2BE080;
 }
 
-.input_type_checkbox:checked ~ .checkbox:before{
+.input_type_checkbox:checked ~ .checkbox:before {
     background-color: #FFF;
     left: calc(36px - 20px + 2px);
 }
