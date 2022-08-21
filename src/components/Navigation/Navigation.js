@@ -12,6 +12,7 @@ function Navigation({ loggedIn, login }) {
   return (
     <div className="nav">
       <button
+        type="button"
         className={`nav__button nav__button_type_${
           !menuIsOpen ? 'burger' : 'close'
         } 

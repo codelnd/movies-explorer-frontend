@@ -21,7 +21,7 @@
     outline: none;
     background: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
@@ -38,6 +38,7 @@
 
 .preloader__button:hover {
     border: 1px solid #000;
+    background: #e8e8e8;
 }
 
 @media screen and (max-width: 1279px) {

@@ -23,6 +23,7 @@ const MoviesCardList = () => {
         <MoviesCard />
       </ul>
       <button
+        type="button"
         className={`preloader__button preloader__button_${
           location.pathname === '/saved-movies' ? 'invisible' : ''
         }`}

@@ -11,13 +11,25 @@ function NavTab({ projectRef, techsRef, studentRef }) {
 
   return (
     <nav className="nav-tab">
-      <button className="nav-tab-button" onMouseDown={handleScrollProject}>
+      <button
+        type="button"
+        className="nav-tab-button"
+        onMouseDown={handleScrollProject}
+      >
         О проекте
       </button>
-      <button className="nav-tab-button" onMouseDown={handleScrollTechs}>
+      <button
+        type="button"
+        className="nav-tab-button"
+        onMouseDown={handleScrollTechs}
+      >
         Технологии
       </button>
-      <button className="nav-tab-button" onMouseDown={handleScrollStudent}>
+      <button
+        type="button"
+        className="nav-tab-button"
+        onMouseDown={handleScrollStudent}
+      >
         Студент
       </button>
     </nav>
@@ -25,6 +37,3 @@ function NavTab({ projectRef, techsRef, studentRef }) {
 }
 
 export default NavTab;
-
-
-

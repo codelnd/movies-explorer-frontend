@@ -19,6 +19,7 @@ const MoviesCard = () => {
           <p className="card__duration">1ч 47м</p>
         </div>
         <button
+          type="button"
           className={`card__button_${
             location.pathname === '/saved-movies'
               ? 'remove'

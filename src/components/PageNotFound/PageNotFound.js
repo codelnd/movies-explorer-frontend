@@ -16,7 +16,7 @@ function PageNotFound() {
     >
       <h2 className="not-found__title">404</h2>
       <p className="not-found__paragraph">Страница не найдена</p>
-      <button className="not-found__button" onClick={goBack}>
+      <button type="button" className="not-found__button" onClick={goBack}>
         Назад
       </button>
     </motion.section>

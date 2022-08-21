@@ -10,6 +10,7 @@ function SearchForm() {
           className="input_type_search"
           type="search"
           placeholder="Фильм"
+          required
         />
         <button className="search-form__button" type="submit"></button>
       </form>
@@ -19,6 +20,3 @@ function SearchForm() {
 }
 
 export default SearchForm;
-
-
-

@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="page">
       <div className="page__container">
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter initial={false}>
           <Routes location={location} key={location.pathname}>
             <Route
               path="/"

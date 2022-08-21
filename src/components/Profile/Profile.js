@@ -42,10 +42,14 @@ function Profile({ loggedIn, login, logout }) {
           </label>
         </form>
         <div className="profile__buttons">
-          <button className="profile__button profile__button_edit">
+          <button
+            type="button"
+            className="profile__button profile__button_edit"
+          >
             Редактировать
           </button>
           <button
+            type="button"
             className="profile__button profile__button_logout"
             onMouseDown={logout}
           >
