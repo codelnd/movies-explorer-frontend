@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a279eaea-d3b5-49ae-94bd-e1afd7387fed" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/MoviesApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCard/MoviesCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavTab/NavTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavTab/NavTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageNotFound/PageNotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageNotFound/PageNotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portfolio/Portfolio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,23 +31,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Денис\\dev\\movies-explorer-frontend\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Денис\\dev\\movies-explorer-frontend\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "copyright.filetypes.CSS",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -79,6 +68,7 @@
       <workItem from="1661007488706" duration="1769000" />
       <workItem from="1661010413802" duration="9346000" />
       <workItem from="1661081376692" duration="4069000" />
+      <workItem from="1661174523517" duration="2938000" />
     </task>
     <servers />
   </component>
