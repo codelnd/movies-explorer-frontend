@@ -17,7 +17,6 @@ function Navigation({ loggedIn, login }) {
           !menuIsOpen ? 'burger' : 'close'
         } 
         nav__button_${loggedIn ? '' : 'invisible'}`}
-        type="button"
         onClick={handleMenu}
       ></button>
       <div

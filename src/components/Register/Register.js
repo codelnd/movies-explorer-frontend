@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Register.css';
 import FormInput from '../FormInput/FormInput';
 import Auth from '../Auth/Auth';
+import useValidation from '../../hooks/useValidation';
 
-function Register({ loggedIn, login }) {
+function Register({ authConfirm, onRegister }) {
+  const { error, isValid, checkErrors } = useValidation();
+  const [userData, setUserData] = useState({});
+
+  function handleUserData(name, value) {
+    setUserData({ ...userData, [name]: value });
+  }
+
   return (
     <Auth
       title="Добро пожаловать!"
@@ -12,8 +20,11 @@ function Register({ loggedIn, login }) {
       question="Уже зарегистрированы?"
       link="Войти"
       path="/signin"
-      loggedIn={loggedIn}
-      login={login}
+      registerData={userData}
+      authConfirm={authConfirm}
+      onRegister={onRegister}
+      isValid={isValid}
+      checkErrors={checkErrors}
     >
       <FormInput
         type="text"
@@ -22,28 +33,26 @@ function Register({ loggedIn, login }) {
         minLength="2"
         maxLength="30"
         placeholder="Как Вас зовут?"
+        onUserData={handleUserData}
       />
-      <span className="auth__error-message auth__error-message_invisible">
-        Что-то пошло не так...
-      </span>
+      <span className="auth__error-message">{error.name}</span>
       <FormInput
         type="email"
         name="email"
         labelText="E-mail"
         placeholder="Введите e-mail"
+        onUserData={handleUserData}
       />
-      <span className="auth__error-message auth__error-message_invisible">
-        Что-то пошло не так...
-      </span>
+      <span className="auth__error-message">{error.email}</span>
       <FormInput
         type="password"
         name="password"
         labelText="Пароль"
         placeholder="Придумайте пароль"
+        minLength="4"
+        onUserData={handleUserData}
       />
-      <span className="auth__error-message auth__error-message_invisible">
-        Что-то пошло не так...
-      </span>
+      <span className="auth__error-message">{error.password}</span>
     </Auth>
   );
 }

@@ -5,7 +5,7 @@ function checkResponse(res) {
     return res.json();
   } else {
     return res.json().then((data) => {
-      throw new Error(data.error || data.message);
+      throw new Error(data.message);
     });
   }
 }
@@ -15,7 +15,10 @@ export function register(name, email, password) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, password }),
-  }).then((res) => checkResponse(res));
+  }).then((res) => {
+    console.log('main api', res);
+    checkResponse(res);
+  });
 }
 
 export function login(email, password) {

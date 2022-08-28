@@ -11,7 +11,7 @@ function Portfolio() {
             href="https://github.com/Denis3094/how-to-learn"
             className="about-me__portfolio-link"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Статичный
           </a>
@@ -21,7 +21,7 @@ function Portfolio() {
             href="https://denis3094.github.io/russian-travel"
             className="about-me__portfolio-link"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Адаптивный сайт
           </a>
@@ -31,7 +31,7 @@ function Portfolio() {
             href="https://github.com/Denis3094/react-mesto-api-full/tree/main/frontend"
             className="about-me__portfolio-link"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             Одностраничное приложение
           </a>

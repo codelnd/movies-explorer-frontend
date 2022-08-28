@@ -9,11 +9,19 @@ const FormInput = ({
   minLength,
   maxLength,
   placeholder,
+  onUserData,
 }) => {
+  const [inputValid, setInputValid] = useState(true);
   const [value, setValue] = useState({});
 
-  function handleInputValue(e) {
-    setValue({ ...value, [e.target.name]: e.target.value });
+  function handleInputValue(evt) {
+    setValue({ ...value, [evt.target.name]: evt.target.value });
+    if (evt.target.checkValidity()) {
+      setInputValid(true);
+      onUserData(evt.target.name, evt.target.value);
+    } else {
+      setInputValid(false);
+    }
   }
 
   return (
@@ -22,7 +30,9 @@ const FormInput = ({
       <input
         type={type}
         name={name}
-        className={`auth__input auth__input_type_${mod}`}
+        className={`auth__input auth__input_${
+          inputValid ? '' : 'error'
+        } auth__input_type_${mod}`}
         required
         minLength={minLength}
         maxLength={maxLength}

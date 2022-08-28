@@ -40,6 +40,7 @@
 }
 
 .input-profile {
+    padding: 0;
     border: none;
     outline: none;
     display: block;
@@ -48,6 +49,10 @@
     font-size: 11px;
     line-height: 13px;
     color: #000;
+}
+
+.input-profile_error {
+    color: #FF4062;
 }
 
 .input-profile::placeholder {
@@ -78,8 +83,12 @@
     color: #000;
 }
 
+.profile__button_invisible {
+    opacity: 0;
+}
+
 .profile__button:hover {
-	opacity: 0.6;
+    opacity: 0.6;
 }
 
 .profile__button_logout {
