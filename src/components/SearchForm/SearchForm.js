@@ -3,7 +3,6 @@ import './SearchForm.css';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import useValidation from '../../hooks/useValidation';
 import { useLocation } from 'react-router-dom';
-import { SEARCH_REGEXP } from '../../utils/constants';
 
 function SearchForm({
   filmsCollection,
@@ -67,7 +66,7 @@ function SearchForm({
           required
           ref={inputRef}
           name="search"
-          pattern={SEARCH_REGEXP}
+          // pattern={SEARCH_REGEXP}
           onChange={handleInputValue}
         />
         <button className="search-form__button" type="submit"></button>
