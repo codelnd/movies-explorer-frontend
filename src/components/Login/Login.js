@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Login.css';
 import Auth from '../Auth/Auth';
 import FormInput from '../FormInput/FormInput';
 import useValidation from '../../hooks/useValidation';
 
-function Login({ onLogin }) {
+function Login({ onLogin, inputDisabled }) {
   const { error, isValid, checkErrors } = useValidation();
   const [userData, setUserData] = useState({});
 
@@ -31,6 +31,7 @@ function Login({ onLogin }) {
         labelText="E-mail"
         placeholder="Введите e-mail"
         onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
       <span className="auth__error-message">{error.email}</span>
       <FormInput
@@ -39,6 +40,7 @@ function Login({ onLogin }) {
         labelText="Пароль"
         placeholder="Введите пароль"
         onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
       <span className="auth__error-message">{error.password}</span>
     </Auth>

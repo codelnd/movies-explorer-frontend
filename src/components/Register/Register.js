@@ -4,7 +4,7 @@ import FormInput from '../FormInput/FormInput';
 import Auth from '../Auth/Auth';
 import useValidation from '../../hooks/useValidation';
 
-function Register({ authConfirm, onRegister }) {
+function Register({ onRegister, inputDisabled, confirm }) {
   const { error, isValid, checkErrors } = useValidation();
   const [userData, setUserData] = useState({});
 
@@ -21,7 +21,7 @@ function Register({ authConfirm, onRegister }) {
       link="Войти"
       path="/signin"
       registerData={userData}
-      authConfirm={authConfirm}
+      confirm={confirm}
       onRegister={onRegister}
       isValid={isValid}
       checkErrors={checkErrors}
@@ -34,6 +34,7 @@ function Register({ authConfirm, onRegister }) {
         maxLength="30"
         placeholder="Как Вас зовут?"
         onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
       <span className="auth__error-message">{error.name}</span>
       <FormInput
@@ -42,6 +43,7 @@ function Register({ authConfirm, onRegister }) {
         labelText="E-mail"
         placeholder="Введите e-mail"
         onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
       <span className="auth__error-message">{error.email}</span>
       <FormInput
@@ -51,6 +53,7 @@ function Register({ authConfirm, onRegister }) {
         placeholder="Придумайте пароль"
         minLength="4"
         onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
       <span className="auth__error-message">{error.password}</span>
     </Auth>

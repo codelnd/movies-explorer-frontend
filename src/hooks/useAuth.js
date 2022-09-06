@@ -1,23 +1,57 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { login, logout, register } from '../utils/MainApi';
-import useTooltip from './useTooltip';
+import { getUser, login, logout, register, updateUser } from '../utils/MainApi';
+import useLocalStorage from './useLocalStorage';
+import { getAllMovies } from '../utils/MoviesApi';
 
-const UseAuth = () => {
+function useAuth() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [confirm, setConfirm] = useState(false);
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [authError, setAuthError] = useState('');
+  const [inputDisabled, setInputDisabled] = useState(false);
+  const [filmsCollection, setFilmsCollection] = useLocalStorage(
+    [],
+    'collection'
+  );
   const pathAuth =
     location.pathname === '/signup' || location.pathname === '/signin';
 
-  const {
-    isConfirm: authConfirm,
-    isPopupOpen: authPopup,
-    isError: authError,
-    changePopup: changeAuthPopup,
-    changeConfirm: changeAuthConfirm,
-    changeError: changeAuthError,
-  } = useTooltip();
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
+  useEffect(() => {
+    if (loggedIn) {
+      getUser()
+        .then((user) => {
+          setCurrentUser({
+            _id: user._id,
+            username: user.name,
+            email: user.email,
+          });
+          checkPath();
+        })
+        .catch((err) => {
+          setAuthError(err.message);
+          setPopupOpen(true);
+        });
+    }
+  }, [loggedIn]);
+
+  function getFilmsCollection() {
+    getAllMovies()
+      .then((res) => {
+        setFilmsCollection(res);
+      })
+      .catch((err) => {
+        setAuthError(err.message);
+        setPopupOpen(true);
+      });
+  }
 
   function checkPath() {
     if (pathAuth) {
@@ -29,43 +63,58 @@ const UseAuth = () => {
 
   function checkAuth() {
     if (localStorage.getItem('email')) {
-      setLoggedIn(true);
+      getUser()
+        .then(() => {
+          setLoggedIn(true);
+          checkPath();
+        })
+        .catch((err) => {
+          setAuthError(err.message);
+          setPopupOpen(true);
+        });
     }
   }
 
   function handleRegister({ username, email, password }) {
+    setInputDisabled(true);
     register(username, email, password)
       .then((res) => {
         if (res._id) {
-          changeAuthConfirm(true);
-          changeAuthPopup(true);
-          setTimeout(() => changeAuthPopup(false), 3000);
+          setConfirm(true);
+          setPopupOpen(true);
+          setTimeout(() => {
+            setConfirm(false);
+            setPopupOpen(false);
+          }, 1500);
           handleLogin({ email, password });
         } else {
-          changeAuthConfirm(false);
-          changeAuthPopup(true);
+          setConfirm(false);
+          setPopupOpen(true);
         }
       })
       .catch((err) => {
-        changeAuthError(err.message);
-        changeAuthConfirm(false);
-        changeAuthPopup(true);
-      });
+        setAuthError(err.message);
+        setConfirm(false);
+        setPopupOpen(true);
+      })
+      .finally(() => setInputDisabled(false));
   }
 
   function handleLogin({ email, password }) {
+    setInputDisabled(true);
     login(email, password)
       .then((res) => {
         if (res.email) {
-          localStorage.setItem('email', email);
           checkAuth();
+          getFilmsCollection();
           navigate('/movies');
         }
       })
       .catch((err) => {
-        changeAuthError(err.message);
-        changeAuthPopup(true);
-      });
+        setAuthError(err.message);
+        setPopupOpen(true);
+      })
+      .finally(() => setInputDisabled(false));
   }
 
   function handleLogout(email) {
@@ -76,23 +125,50 @@ const UseAuth = () => {
         navigate('/');
       })
       .catch((err) => {
-        changeAuthError(err.message);
-        changeAuthPopup(true);
+        setAuthError(err.message);
+        setPopupOpen(true);
       });
+  }
+
+  function handleUpdateUser({ name, email }) {
+    setInputDisabled(true);
+    updateUser(name, email)
+      .then((data) => {
+        setCurrentUser({
+          ...currentUser,
+          username: data.name,
+          email: data.email,
+        });
+        localStorage.setItem('email', data.email);
+        setConfirm(true);
+        setPopupOpen(true);
+        setTimeout(() => {
+          setConfirm(false);
+          setPopupOpen(false);
+        }, 1500);
+      })
+      .catch((err) => {
+        setAuthError(err.message);
+        setConfirm(false);
+        setPopupOpen(true);
+      })
+      .finally(() => setInputDisabled(false));
   }
 
   return {
     loggedIn,
-    authConfirm,
-    authPopup,
+    confirm,
+    popupOpen,
+    setPopupOpen,
     authError,
-    checkAuth,
-    checkPath,
-    changeAuthPopup,
+    currentUser,
+    inputDisabled,
+    filmsCollection,
     handleRegister,
     handleLogin,
     handleLogout,
+    handleUpdateUser,
   };
-};
+}
 
-export default UseAuth;
+export default useAuth;

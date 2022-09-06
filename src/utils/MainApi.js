@@ -15,10 +15,7 @@ export function register(name, email, password) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, password }),
-  }).then((res) => {
-    console.log('main api', res);
-    checkResponse(res);
-  });
+  }).then((res) => console.log(res));
 }
 
 export function login(email, password) {
@@ -27,7 +24,7 @@ export function login(email, password) {
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
-  }).then((res) => checkResponse(res));
+  }).then((res) => console.log(res));
 }
 
 export function logout(email) {
@@ -52,5 +49,52 @@ export function updateUser(name, email) {
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email }),
+  }).then((res) => checkResponse(res));
+}
+
+export function getMovies() {
+  return fetch(`${baseUrl}/movies`, {
+    method: 'GET',
+    credentials: 'include',
+  }).then((res) => checkResponse(res));
+}
+
+export function addMovie({
+  country,
+  director,
+  duration,
+  year,
+  description,
+  image,
+  trailerLink,
+  thumbnail,
+  movieId,
+  nameRU,
+  nameEN,
+}) {
+  return fetch(`${baseUrl}/movies`, {
+    method: 'POST',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      country,
+      director,
+      duration,
+      year,
+      description,
+      image,
+      trailerLink,
+      thumbnail,
+      movieId,
+      nameRU,
+      nameEN,
+    }),
+  }).then((res) => checkResponse(res));
+}
+
+export function removeMovie({ id }) {
+  return fetch(`${baseUrl}/movies/${id}`, {
+    method: 'DELETE',
+    credentials: 'include',
   }).then((res) => checkResponse(res));
 }

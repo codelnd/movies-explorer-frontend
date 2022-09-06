@@ -11,83 +11,58 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import useAuth from '../../hooks/useAuth';
-import useTooltip from '../../hooks/useTooltip';
-import { getUser, updateUser } from '../../utils/MainApi';
-import CurrentUserContext from '../CurrentUserContext/CurrentUserContext';
+import { CurrentUserContext } from '../CurrentUserContext/CurrentUserContext';
 import Tooltip from '../Tooltip/Tooltip';
+import useSearch from '../../hooks/useSearch';
+import useSaveMovie from '../../hooks/useSaveMovie';
 
 function App() {
   const location = useLocation();
-  const [currentUser, setCurrentUser] = useState({});
-
-  const {
-    isConfirm: profileConfirm,
-    isPopupOpen: profilePopup,
-    isError: profileError,
-    changePopup: changeProfilePopup,
-    changeConfirm: changeProfileConfirm,
-    changeError: changeProfileError,
-  } = useTooltip();
 
   const {
     loggedIn,
-    authConfirm,
-    authPopup,
     authError,
-    checkAuth,
-    checkPath,
-    changeAuthPopup,
+    currentUser,
+    confirm,
+    popupOpen,
+    filmsCollection,
+    inputDisabled,
+    setPopupOpen,
     handleRegister,
     handleLogin,
     handleLogout,
+    handleUpdateUser,
   } = useAuth();
 
-  useEffect(() => {
-    checkAuth();
-    checkPath();
-  }, []);
+  const {
+    matchedMovies,
+    showedMovies,
+    userMatchedMovies,
+    setUserMatchedMovies,
+    shortMovie,
+    noResult,
+    isLoading,
+    isSearched,
+    isUsersFilmsSearched,
+    setIsUsersFilmsSearched,
+    storageCheckbox,
+    storageWord,
+    setMatchedMovies,
+    setShortMovie,
+    filterMovies,
+    filterSavedMovies,
+    handleMoreButton,
+  } = useSearch();
 
-  useEffect(() => {
-    if (loggedIn) {
-      getUser()
-        .then((user) => {
-          setCurrentUser({
-            _id: user._id,
-            username: user.name,
-            email: user.email,
-          });
-          checkPath();
-        })
-        .catch((err) => {
-          changeProfileError(err.message);
-          changeProfilePopup(true);
-        });
-    }
-  }, [loggedIn]);
-
-  function closePopup() {
-    changeAuthPopup(false);
-    changeProfilePopup(false);
-  }
-
-  function updateUserData({ name, email }) {
-    updateUser(name, email)
-      .then((newData) => {
-        setCurrentUser({
-          ...currentUser,
-          username: newData.name,
-          email: newData.email,
-        });
-        changeProfileConfirm(true);
-        changeProfilePopup(true);
-        setTimeout(() => changeProfilePopup(false), 3000);
-      })
-      .catch((err) => {
-        changeProfileError(err.message);
-        changeProfileConfirm(false);
-        changeProfilePopup(true);
-      });
-  }
+  const {
+    savedMovies,
+    moviePopupOpen,
+    setMoviePopupOpen,
+    movieError,
+    getSavedMovies,
+    handleSaveMovie,
+    handleRemoveMovie,
+  } = useSaveMovie();
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -100,7 +75,26 @@ function App() {
                 path="/movies"
                 element={
                   <ProtectedRoute loggedIn={loggedIn}>
-                    <Movies loggedIn={loggedIn} />
+                    <Movies
+                      loggedIn={loggedIn}
+                      filmsCollection={filmsCollection}
+                      matchedMovies={matchedMovies}
+                      showedMovies={showedMovies}
+                      shortMovie={shortMovie}
+                      noResult={noResult}
+                      isSearched={isSearched}
+                      isLoading={isLoading}
+                      savedMovies={savedMovies}
+                      storageWord={storageWord}
+                      storageCheckbox={storageCheckbox}
+                      setIsUsersFilmsSearched={setIsUsersFilmsSearched}
+                      setShortMovie={setShortMovie}
+                      filterMovies={filterMovies}
+                      getSavedMovies={getSavedMovies}
+                      handleMoreButton={handleMoreButton}
+                      onSave={handleSaveMovie}
+                      onRemove={handleRemoveMovie}
+                    />
                   </ProtectedRoute>
                 }
               />
@@ -108,7 +102,20 @@ function App() {
                 path="/saved-movies"
                 element={
                   <ProtectedRoute loggedIn={loggedIn}>
-                    <SavedMovies loggedIn={loggedIn} />
+                    <SavedMovies
+                      loggedIn={loggedIn}
+                      savedMovies={savedMovies}
+                      userMatchedMovies={userMatchedMovies}
+                      setUserMatchedMovies={setUserMatchedMovies}
+                      shortMovie={shortMovie}
+                      noResult={noResult}
+                      isUsersFilmsSearched={isUsersFilmsSearched}
+                      setIsUsersFilmsSearched={setIsUsersFilmsSearched}
+                      setShortMovie={setShortMovie}
+                      filterSavedMovies={filterSavedMovies}
+                      getSavedMovies={getSavedMovies}
+                      onRemove={handleRemoveMovie}
+                    />
                   </ProtectedRoute>
                 }
               />
@@ -119,28 +126,34 @@ function App() {
                     <Profile
                       loggedIn={loggedIn}
                       onLogout={handleLogout}
-                      onUpdate={updateUserData}
+                      onUpdate={handleUpdateUser}
                     />
                   </ProtectedRoute>
                 }
               />
-              <Route path="/signin" element={<Login onLogin={handleLogin} />} />
+              <Route
+                path="/signin"
+                element={
+                  <Login onLogin={handleLogin} inputDisabled={inputDisabled} />
+                }
+              />
               <Route
                 path="/signup"
                 element={
                   <Register
-                    authConfirm={authConfirm}
+                    confirm={confirm}
                     onRegister={handleRegister}
+                    inputDisabled={inputDisabled}
                   />
                 }
               />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
             <Tooltip
-              isConfirm={[authConfirm, profileConfirm]}
-              isError={[authError, profileError]}
-              isPopupOpen={[authPopup, profilePopup]}
-              onClose={closePopup}
+              isConfirm={confirm}
+              isError={[authError, movieError]}
+              isOpen={[popupOpen, moviePopupOpen]}
+              onClose={[setPopupOpen, setMoviePopupOpen]}
             ></Tooltip>
           </AnimatePresence>
         </div>

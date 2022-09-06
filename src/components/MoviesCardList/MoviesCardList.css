@@ -5,6 +5,10 @@
     padding-bottom: 30px;
 }
 
+.movies-cardlist_invisible {
+    display: none;
+}
+
 .card__list {
     padding: 0;
     margin: 0;

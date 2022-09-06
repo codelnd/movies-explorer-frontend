@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Profile.css';
 import Header from '../Header/Header';
 import { motion } from 'framer-motion';
-import CurrentUserContext from '../CurrentUserContext/CurrentUserContext';
+import { CurrentUserContext } from '../CurrentUserContext/CurrentUserContext';
 import { useLocation } from 'react-router-dom';
 import useValidation from '../../hooks/useValidation';
 
@@ -14,10 +14,6 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
   const [inputDisabled, setInputDisabled] = useState(true);
   const [inputValid, setInputValid] = useState(true);
   const [value, setValue] = useState({});
-
-  useEffect(() => {
-    setValue(currentUser);
-  }, []);
 
   useEffect(() => {
     if (location.pathname === '/profile') {
@@ -50,11 +46,11 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onUpdate({ name: value.username, email: value.email });
     setInputDisabled(true);
+    onUpdate({ name: value.username, email: value.email });
   }
 
-  function handleCancel() {
+  function handleClose() {
     setValue(currentUser);
     setError({});
     setInputValid(true);
@@ -63,10 +59,6 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
 
   function handleLogout() {
     onLogout(currentUser.email);
-  }
-
-  function handleFocus(evt) {
-    evt.target.select();
   }
 
   return (
@@ -98,10 +90,9 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
               minLength="2"
               maxLength="30"
               required
+              value={value.username || ''}
               disabled={inputDisabled}
               onChange={handleInputValue}
-              value={value.username || ''}
-              onFocus={handleFocus}
             />
           </label>
           <label className="profile__label profile__label_email">
@@ -114,10 +105,9 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
               placeholder="Введите e-mail"
               name="email"
               required
+              value={value.email || ''}
               disabled={inputDisabled}
               onChange={handleInputValue}
-              value={value.email || ''}
-              onFocus={handleFocus}
             />
           </label>
         </form>
@@ -137,7 +127,7 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
             className={`profile__button profile__button_${
               !inputDisabled ? '' : 'invisible'
             } profile__button_cancel`}
-            onClick={handleCancel}
+            onClick={handleClose}
           >
             Отмена
           </button>

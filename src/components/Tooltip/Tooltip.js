@@ -1,15 +1,25 @@
 import React from 'react';
 import './Tooltip.css';
+import { useLocation } from 'react-router-dom';
+import useEscapeClose from '../../hooks/useEscapeClose';
 
-function Tooltip({ isConfirm, isError, isPopupOpen, onClose }) {
-  const [authConfirm, profileConfirm] = isConfirm;
-  const [authError, profileError] = isError;
-  const [authPopup, profilePopup] = isPopupOpen;
+function Tooltip({ isConfirm, isError, onClose, isOpen }) {
+  const location = useLocation();
+  const [authError, movieError] = isError;
+  const [setAuthPopupOpen, setMoviePopupOpen] = onClose;
+  const popupOpened = isOpen.some((popup) => popup);
+
+  useEscapeClose(popupOpened, closeInfoPopups);
+
+  function closeInfoPopups() {
+    setAuthPopupOpen(false);
+    setMoviePopupOpen(false);
+  }
 
   return (
     <div
-      className={`tooltip tooltip_${authPopup || profilePopup ? 'opened' : ''}`}
-      onMouseDown={onClose}
+      className={`tooltip tooltip_${popupOpened ? 'opened' : ''}`}
+      onMouseDown={closeInfoPopups}
     >
       <div
         className="tooltip__container"
@@ -18,19 +28,19 @@ function Tooltip({ isConfirm, isError, isPopupOpen, onClose }) {
         <button
           className="tooltip__close-button"
           type="button"
-          onMouseDown={onClose}
+          onMouseDown={closeInfoPopups}
         ></button>
         <div
           className={`tooltip__image tooltip__image_${
-            authConfirm || profileConfirm ? 'success' : 'fail'
+            isConfirm ? 'success' : 'fail'
           }`}
         ></div>
         <h2 className="tooltip__message">
-          {authConfirm
-            ? 'Вы успешно зарегистрировались!'
-            : profileConfirm
+          {isConfirm && location.pathname === '/profile'
             ? 'Данные изменены!'
-            : authError || profileError}
+            : isConfirm && (location.pathname === '/signup' || '/')
+            ? 'Вы успешно зарегистрировались!'
+            : authError || movieError}
         </h2>
       </div>
     </div>
