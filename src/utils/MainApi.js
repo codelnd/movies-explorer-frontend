@@ -15,7 +15,10 @@ export function register(name, email, password) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, password }),
-  }).then((res) => console.log(res));
+  }).then((res) => {
+    console.log(res);
+    checkResponse(res);
+  });
 }
 
 export function login(email, password) {
@@ -24,7 +27,10 @@ export function login(email, password) {
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
-  }).then((res) => console.log(res));
+  }).then((res) => {
+    console.log(res);
+    checkResponse(res);
+  });
 }
 
 export function logout(email) {
