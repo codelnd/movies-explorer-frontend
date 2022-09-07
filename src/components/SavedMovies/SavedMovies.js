@@ -60,6 +60,7 @@ function SavedMovies({
           noResult={noResult}
           showedMovies={!isUsersFilmsSearched ? savedMovies : userMatchedMovies}
           onRemove={onRemove}
+          isMoreButtonExist={false}
         />
       </motion.section>
       <Footer />

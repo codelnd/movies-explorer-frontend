@@ -61,6 +61,7 @@ function Movies({
           onMore={handleMoreButton}
           onSave={onSave}
           onRemove={onRemove}
+          isMoreButtonExist={matchedMovies.length !== showedMovies.length}
         />
       </motion.section>
       <Footer />

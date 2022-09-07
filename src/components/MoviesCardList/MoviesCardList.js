@@ -12,11 +12,16 @@ const MoviesCardList = ({
   onMore,
   onSave,
   onRemove,
+                          isMoreButtonExist,
 }) => {
   const location = useLocation();
 
   // console.log(matchedMovies);
   // console.log(showedMovies);
+  console.log(isMoreButtonExist)
+  console.log ( isMoreButtonExist
+      ? ''
+      : 'invisible')
 
   return (
     <section
@@ -41,10 +46,9 @@ const MoviesCardList = ({
         type="button"
         onClick={onMore}
         className={`preloader__button preloader__button_${
-          location.pathname === '/saved-movies' ||
-          matchedMovies.length === showedMovies.length
-            ? 'invisible'
-            : ''
+          isMoreButtonExist
+            ? ''
+            : 'invisible'
         }
           ${noResult || !isSearched ? 'invisible' : ''}`}
       >
