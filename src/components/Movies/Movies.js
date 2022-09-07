@@ -63,7 +63,6 @@ function Movies({
           onRemove={onRemove}
         />
       </motion.section>
-      {isLoading && <Preloader />}
       <Footer />
     </>
   );
