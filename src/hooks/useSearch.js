@@ -20,7 +20,6 @@ const useSearch = () => {
   const [isUsersFilmsSearched, setIsUsersFilmsSearched] = useState(false);
 
   useEffect(() => {
-    console.log('use search', storageMovies);
     setMatchedMovies(storageMovies);
     setShortMovie(storageCheckbox);
   }, []);
@@ -30,10 +29,6 @@ const useSearch = () => {
   }, [row, count, matchedMovies]);
 
   useEffect(() => {
-    console.log('isSearched', isSearched);
-    console.log('matched movies', matchedMovies);
-    console.log('isUsersFilmsSearched', isUsersFilmsSearched);
-    console.log('userMatchedMovies', userMatchedMovies);
     if (isSearched && !matchedMovies[0]) {
       setNoResult(true);
       setIsLoading(false);
@@ -114,7 +109,6 @@ const useSearch = () => {
     }
   }
 
-  // console.log('matched movies', matchedMovies);
   return {
     matchedMovies,
     showedMovies,

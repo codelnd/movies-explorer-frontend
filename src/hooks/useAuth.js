@@ -49,7 +49,6 @@ function useAuth() {
   }
 
   function checkAuth() {
-    console.log(localStorage.getItem('email'));
     if (localStorage.getItem('email')) {
       getUser()
         .then(() => {
@@ -67,7 +66,6 @@ function useAuth() {
     setInputDisabled(true);
     register(username, email, password)
       .then((res) => {
-        console.log(res);
         if (res._id) {
           setConfirm(true);
           setPopupOpen(true);

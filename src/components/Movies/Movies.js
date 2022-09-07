@@ -33,7 +33,7 @@ function Movies({
     setIsUsersFilmsSearched(false);
     setShortMovie(storageCheckbox);
   }, []);
-  console.log('MOVIES');
+
   return (
     <>
       <Header loggedIn={loggedIn} />

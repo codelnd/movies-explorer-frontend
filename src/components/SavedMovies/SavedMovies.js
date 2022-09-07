@@ -38,7 +38,7 @@ function SavedMovies({
     });
     setUserMatchedMovies(userMatchedList);
   }, [savedMovies]);
-  console.log('savedMovies');
+
   return (
     <>
       <Header loggedIn={loggedIn} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
-import { useLocation } from 'react-router-dom';
 
 const MoviesCardList = ({
   matchedMovies,
@@ -12,16 +11,8 @@ const MoviesCardList = ({
   onMore,
   onSave,
   onRemove,
-                          isMoreButtonExist,
+                            isMoreButtonExist,
 }) => {
-  const location = useLocation();
-
-  // console.log(matchedMovies);
-  // console.log(showedMovies);
-  console.log(isMoreButtonExist)
-  console.log ( isMoreButtonExist
-      ? ''
-      : 'invisible')
 
   return (
     <section

@@ -25,7 +25,7 @@ const useValidation = () => {
           : setError({
               ...error,
               [object.name]:
-                'Имя должно быть не менее двух символов и может содержать только буквы, пробел или дефис.',
+                'Имя должно быть не менее двух символов и содержать буквы, пробел или дефис.',
             });
       } else {
         setError({ ...error, [object.name]: object.validationMessage });
