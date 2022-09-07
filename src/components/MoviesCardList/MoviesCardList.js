@@ -15,6 +15,9 @@ const MoviesCardList = ({
 }) => {
   const location = useLocation();
 
+  // console.log(matchedMovies);
+  // console.log(showedMovies);
+
   return (
     <section
       className={`movies-cardlist movies-cardlist_${
@@ -30,12 +33,13 @@ const MoviesCardList = ({
               savedMovies={savedMovies}
               onSave={onSave}
               onRemove={onRemove}
-            />
+            ></MoviesCard>
           );
         })}
       </ul>
       <button
         type="button"
+        onClick={onMore}
         className={`preloader__button preloader__button_${
           location.pathname === '/saved-movies' ||
           matchedMovies.length === showedMovies.length
@@ -43,7 +47,6 @@ const MoviesCardList = ({
             : ''
         }
           ${noResult || !isSearched ? 'invisible' : ''}`}
-        onClick={onMore}
       >
         Ещё
       </button>

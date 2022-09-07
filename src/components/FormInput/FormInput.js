@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './FormInput.css';
 import { isEmail } from 'validator';
+import { NAME_REGEXP } from '../../utils/constants';
 
 const FormInput = ({
   type,
@@ -45,7 +46,7 @@ const FormInput = ({
         value={value[name] || ''}
         onChange={handleInputValue}
         disabled={inputDisabled}
-        // pattern={name === 'username' ? NAME_REGEXP : null}
+        pattern={name === 'username' ? NAME_REGEXP : null}
       />
     </label>
   );

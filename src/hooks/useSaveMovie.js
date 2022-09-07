@@ -32,10 +32,10 @@ function useSaveMovie() {
 
   function handleRemoveMovie(movieId) {
     removeMovie(movieId)
-      .then((removed) => {
+      .then((res) => {
         setSavedMovies(
           savedMovies.filter((movie) => {
-            return movie._id !== removed._id;
+            return movie._id !== res._id;
           })
         );
       })

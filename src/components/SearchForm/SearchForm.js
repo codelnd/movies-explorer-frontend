@@ -3,9 +3,10 @@ import './SearchForm.css';
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox';
 import useValidation from '../../hooks/useValidation';
 import { useLocation } from 'react-router-dom';
+import { SEARCH_REGEXP } from '../../utils/constants';
 
 function SearchForm({
-  filmsCollection,
+  filmsList,
   shortMovie,
   storageWord,
   setShortMovie,
@@ -18,7 +19,7 @@ function SearchForm({
 
   useEffect(() => {
     if (value.search && isValid) {
-      onSearch(value.search, filmsCollection);
+      onSearch(value.search, filmsList);
     }
   }, [shortMovie]);
 
@@ -28,9 +29,9 @@ function SearchForm({
     }
   }, [shortMovie, value]);
 
+  // setValue({ search: localStorage.getItem('word') });
   useEffect(() => {
     if (location.pathname === '/movies') {
-      // setValue({ search: localStorage.getItem('word') });
       setValue({ search: storageWord });
     }
   }, []);
@@ -40,11 +41,11 @@ function SearchForm({
     setValue({ search: evt.target.value });
   }
 
-  function handleSubmit(evt) {
-    evt.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
     checkErrors(inputRef.current);
     if (isValid && value.search) {
-      onSearch(value.search, filmsCollection);
+      onSearch(value.search, filmsList);
     }
   }
 
@@ -66,12 +67,12 @@ function SearchForm({
           required
           ref={inputRef}
           name="search"
-          // pattern={SEARCH_REGEXP}
+          pattern={SEARCH_REGEXP}
           onChange={handleInputValue}
         />
         <button className="search-form__button" type="submit"></button>
-        <span className="error-search">{error.search}</span>
       </form>
+      <span className="error-search">{error.search}</span>
       <FilterCheckbox shortMovie={shortMovie} setShortMovie={setShortMovie} />
     </section>
   );

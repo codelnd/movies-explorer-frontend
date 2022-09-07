@@ -28,7 +28,7 @@ function Register({ onRegister, inputDisabled, confirm }) {
     >
       <FormInput
         type="text"
-        name="name"
+        name="username"
         labelText="Имя"
         minLength="2"
         maxLength="30"
@@ -36,7 +36,7 @@ function Register({ onRegister, inputDisabled, confirm }) {
         onUserData={handleUserData}
         inputDisabled={inputDisabled}
       />
-      <span className="auth__error-message">{error.name}</span>
+      <span className="auth__error-message">{error.username}</span>
       <FormInput
         type="email"
         name="email"

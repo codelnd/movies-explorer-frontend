@@ -5,8 +5,8 @@ import useLocalStorage from './useLocalStorage';
 import { getAllMovies } from '../utils/MoviesApi';
 
 function useAuth() {
-  const location = useLocation();
   const navigate = useNavigate();
+  const location = useLocation();
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [confirm, setConfirm] = useState(false);
@@ -17,8 +17,6 @@ function useAuth() {
     [],
     'collection'
   );
-  const pathAuth =
-    location.pathname === '/signup' || location.pathname === '/signin';
 
   useEffect(() => {
     checkAuth();
@@ -42,19 +40,8 @@ function useAuth() {
     }
   }, [loggedIn]);
 
-  function getFilmsCollection() {
-    getAllMovies()
-      .then((res) => {
-        setFilmsCollection(res);
-      })
-      .catch((err) => {
-        setAuthError(err.message);
-        setPopupOpen(true);
-      });
-  }
-
   function checkPath() {
-    if (pathAuth) {
+    if (location.pathname === '/signup' || location.pathname === '/signin') {
       navigate('/');
     } else {
       navigate(location.pathname);
@@ -62,6 +49,7 @@ function useAuth() {
   }
 
   function checkAuth() {
+    console.log(localStorage.getItem('email'));
     if (localStorage.getItem('email')) {
       getUser()
         .then(() => {
@@ -79,6 +67,7 @@ function useAuth() {
     setInputDisabled(true);
     register(username, email, password)
       .then((res) => {
+        console.log(res);
         if (res._id) {
           setConfirm(true);
           setPopupOpen(true);
@@ -103,8 +92,9 @@ function useAuth() {
   function handleLogin({ email, password }) {
     setInputDisabled(true);
     login(email, password)
-      .then((res) => {
-        if (res.email) {
+      .then((user) => {
+        if (user.email) {
+          localStorage.setItem('email', user.email);
           checkAuth();
           getFilmsCollection();
           navigate('/movies');
@@ -153,6 +143,17 @@ function useAuth() {
         setPopupOpen(true);
       })
       .finally(() => setInputDisabled(false));
+  }
+
+  function getFilmsCollection() {
+    getAllMovies()
+      .then((data) => {
+        setFilmsCollection(data);
+      })
+      .catch((err) => {
+        setAuthError(err.message);
+        setPopupOpen(true);
+      });
   }
 
   return {

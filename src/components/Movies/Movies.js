@@ -33,7 +33,7 @@ function Movies({
     setIsUsersFilmsSearched(false);
     setShortMovie(storageCheckbox);
   }, []);
-
+  console.log('MOVIES');
   return (
     <>
       <Header loggedIn={loggedIn} />
@@ -44,7 +44,7 @@ function Movies({
         exit={{ opacity: 0 }}
       >
         <SearchForm
-          filmsCollection={filmsCollection}
+          filmsList={filmsCollection}
           shortMovie={shortMovie}
           storageWord={storageWord}
           setShortMovie={setShortMovie}
@@ -63,6 +63,7 @@ function Movies({
           onRemove={onRemove}
         />
       </motion.section>
+      {isLoading && <Preloader />}
       <Footer />
     </>
   );

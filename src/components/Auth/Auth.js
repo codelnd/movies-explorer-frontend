@@ -41,7 +41,7 @@ const Auth = ({
       </Link>
       <h2 className="auth__title">{title}</h2>
       <form
-        className="auth__form"
+        className={`auth__form auth__form_${name}`}
         onSubmit={name === 'login' ? handleLoginSubmit : handleRegisterSubmit}
         onChange={checkErrors}
         name={name}

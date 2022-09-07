@@ -4,16 +4,19 @@ import { useLocation } from 'react-router-dom';
 
 const MoviesCard = ({ movie, savedMovies, onSave, onRemove }) => {
   const location = useLocation();
+  const [film, setFilm] = useState(movie);
   const [liked, setLiked] = useState(false);
   const [time, setTime] = useState({});
-  const [film, setFilm] = useState(movie);
 
   useEffect(() => {
     setLiked(false);
-    savedMovies.forEach((saved) => {
-      if ((film.id = saved.movieId || film.movieId === saved.movieId)) {
+    savedMovies.forEach((savedMovie) => {
+      if (
+        film.id === savedMovie.movieId ||
+        film.movieId === savedMovie.movieId
+      ) {
         setLiked(true);
-        setFilm(savedMovies);
+        setFilm(savedMovie);
       }
     });
   }, [savedMovies]);
@@ -65,14 +68,14 @@ const MoviesCard = ({ movie, savedMovies, onSave, onRemove }) => {
               ? 'liked'
               : 'save'
           }`}
-          onMouseDown={handleLike}
+          onClick={handleLike}
         ></button>
       </div>
       <a
         href={film.trailerLink}
         className="card__link"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noreferrer"
       >
         <img
           className="card__img"

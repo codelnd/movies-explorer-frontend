@@ -11,14 +11,12 @@ function checkResponse(res) {
 }
 
 export function register(name, email, password) {
+  console.log(name, email, password);
   return fetch(`${baseUrl}/signup`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, email, password }),
-  }).then((res) => {
-    console.log(res);
-    checkResponse(res);
-  });
+  }).then((res) => checkResponse(res));
 }
 
 export function login(email, password) {
@@ -29,7 +27,7 @@ export function login(email, password) {
     body: JSON.stringify({ email, password }),
   }).then((res) => {
     console.log(res);
-    checkResponse(res);
+    return checkResponse(res);
   });
 }
 
@@ -102,5 +100,8 @@ export function removeMovie({ id }) {
   return fetch(`${baseUrl}/movies/${id}`, {
     method: 'DELETE',
     credentials: 'include',
-  }).then((res) => checkResponse(res));
+  }).then((res) => {
+    console.log(res);
+    return checkResponse(res);
+  });
 }

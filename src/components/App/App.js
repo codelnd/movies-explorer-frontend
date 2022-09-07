@@ -47,11 +47,11 @@ function App() {
     setIsUsersFilmsSearched,
     storageCheckbox,
     storageWord,
-    setMatchedMovies,
     setShortMovie,
     filterMovies,
     filterSavedMovies,
     handleMoreButton,
+    noUserResult,
   } = useSearch();
 
   const {
@@ -108,7 +108,7 @@ function App() {
                       userMatchedMovies={userMatchedMovies}
                       setUserMatchedMovies={setUserMatchedMovies}
                       shortMovie={shortMovie}
-                      noResult={noResult}
+                      noResult={noUserResult}
                       isUsersFilmsSearched={isUsersFilmsSearched}
                       setIsUsersFilmsSearched={setIsUsersFilmsSearched}
                       setShortMovie={setShortMovie}

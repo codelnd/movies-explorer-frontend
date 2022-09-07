@@ -15,10 +15,12 @@ const useSearch = () => {
   const [userMatchedMovies, setUserMatchedMovies] = useState([]);
   const [shortMovie, setShortMovie] = useState(false);
   const [noResult, setNoResult] = useState(false);
+  const [noUserResult, setNoUserResult] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
   const [isUsersFilmsSearched, setIsUsersFilmsSearched] = useState(false);
 
   useEffect(() => {
+    console.log('use search', storageMovies);
     setMatchedMovies(storageMovies);
     setShortMovie(storageCheckbox);
   }, []);
@@ -28,46 +30,56 @@ const useSearch = () => {
   }, [row, count, matchedMovies]);
 
   useEffect(() => {
+    console.log('isSearched', isSearched);
+    console.log('matched movies', matchedMovies);
+    console.log('isUsersFilmsSearched', isUsersFilmsSearched);
+    console.log('userMatchedMovies', userMatchedMovies);
     if (isSearched && !matchedMovies[0]) {
       setNoResult(true);
       setIsLoading(false);
-    } else if (isUsersFilmsSearched && !userMatchedMovies[0]) {
-      setIsLoading(false);
+      return;
     } else {
-      setIsLoading(false);
       setNoResult(false);
     }
-  }, [isSearched, matchedMovies, isUsersFilmsSearched, userMatchedMovies]);
+    if (isUsersFilmsSearched && !userMatchedMovies[0]) {
+      setNoUserResult(true);
+      setIsLoading(false);
+      return;
+    } else setNoUserResult(false);
+    setIsLoading(false);
+  }, [isSearched, isUsersFilmsSearched, matchedMovies, userMatchedMovies]);
 
   function filterMovies(word, moviesCollection) {
     setIsLoading(true);
-    const searchWord = word.replace(/\s\s+/g, ' ').replace(/^\s+|\s+$/g, '');
-    setStorageWord(searchWord);
-    const regex = new RegExp(`${searchWord}`, 'i');
+    setTimeout(() => {
+      const searchWord = word.replace(/\s\s+/g, ' ').replace(/^\s+|\s+$/g, '');
+      setStorageWord(searchWord);
+      const regex = new RegExp(`${searchWord}`, 'i');
 
-    if (shortMovie) {
-      const shortMoviesList = moviesCollection.filter((movie) => {
-        if (Object.values(movie).every((film) => film !== null)) {
-          return (
-            (movie.nameRU.match(regex) || movie.nameEN.match(regex)) &&
-            movie.duration <= SHORT_MOVIE
-          );
-        }
-      });
-      setMatchedMovies(shortMoviesList);
-      setStorageMovies(shortMoviesList);
-      setStorageCheckbox(shortMovie);
-    } else {
-      const moviesList = moviesCollection.filter((movie) => {
-        if (Object.values(movie).every((film) => film !== null)) {
-          return movie.nameRU.match(regex) || movie.nameEN.match(regex);
-        }
-      });
-      setMatchedMovies(moviesList);
-      setStorageMovies(moviesList);
-      setStorageCheckbox('');
-    }
-    setIsSearched(true);
+      if (shortMovie) {
+        const shortMoviesList = moviesCollection.filter((movie) => {
+          if (Object.values(movie).every((film) => film !== null)) {
+            return (
+              (movie.nameRU.match(regex) || movie.nameEN.match(regex)) &&
+              movie.duration <= SHORT_MOVIE
+            );
+          }
+        });
+        setMatchedMovies(shortMoviesList);
+        setStorageMovies(shortMoviesList);
+        setStorageCheckbox(shortMovie);
+      } else {
+        const moviesList = moviesCollection.filter((movie) => {
+          if (Object.values(movie).every((film) => film !== null)) {
+            return movie.nameRU.match(regex) || movie.nameEN.match(regex);
+          }
+        });
+        setMatchedMovies(moviesList);
+        setStorageMovies(moviesList);
+        setStorageCheckbox('');
+      }
+      setIsSearched(true);
+    }, 1000);
   }
 
   function filterSavedMovies(word, usersCollection) {
@@ -102,6 +114,7 @@ const useSearch = () => {
     }
   }
 
+  // console.log('matched movies', matchedMovies);
   return {
     matchedMovies,
     showedMovies,
@@ -120,6 +133,7 @@ const useSearch = () => {
     filterMovies,
     filterSavedMovies,
     handleMoreButton,
+    noUserResult,
   };
 };
 export default useSearch;

@@ -28,17 +28,17 @@ function SavedMovies({
   }, []);
 
   useEffect(() => {
-    let matchedList = [];
+    let userMatchedList = [];
     userMatchedMovies.map((matchedMovie) => {
       return savedMovies.forEach((savedMovie) => {
         if (matchedMovie._id === savedMovie._id) {
-          matchedList.push(matchedMovie);
+          userMatchedList.push(matchedMovie);
         }
       });
     });
-    setUserMatchedMovies(matchedList);
+    setUserMatchedMovies(userMatchedList);
   }, [savedMovies]);
-
+  console.log('savedMovies');
   return (
     <>
       <Header loggedIn={loggedIn} />
@@ -49,7 +49,7 @@ function SavedMovies({
         exit={{ opacity: 0 }}
       >
         <SearchForm
-          filmsCollection={savedMovies}
+          filmsList={savedMovies}
           shortMovie={shortMovie}
           setShortMovie={setShortMovie}
           onSearch={filterSavedMovies}
