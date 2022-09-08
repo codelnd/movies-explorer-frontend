@@ -70,7 +70,7 @@ function SearchForm({
                     pattern={SEARCH_REGEXP}
                     onChange={handleInputValue}
                 />
-                <span className="search-error">{error.search}</span>
+                <span className="search-error search-error_invisible">{error.search}</span>
                 <div className='search-form__wrapper'>
                     <button className="search-form__button" type="submit"></button>
                     <span className='border-right'></span>

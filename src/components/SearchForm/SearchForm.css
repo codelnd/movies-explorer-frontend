@@ -106,7 +106,6 @@
 }
 
 .search-error {
-    transition: all 0.5s linear;
     font-size: 10px;
     line-height: 12px;
     color: #ff4062;
