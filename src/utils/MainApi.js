@@ -26,10 +26,7 @@ export function login(email, password) {
     credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, password }),
-  }).then((res) => {
-    console.log(res);
-    return checkResponse(res);
-  });
+  }).then((res) => checkResponse(res));
 }
 
 export function logout(email) {
@@ -101,8 +98,5 @@ export function removeMovie({ id }) {
   return fetch(`${baseUrl}/movies/${id}`, {
     method: 'DELETE',
     credentials: 'include',
-  }).then((res) => {
-    console.log(res);
-    return checkResponse(res);
-  });
+  }).then((res) => checkResponse(res));
 }
