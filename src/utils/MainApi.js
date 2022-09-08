@@ -12,7 +12,6 @@ function checkResponse(res) {
 }
 
 export function register(name, email, password) {
-  console.log(name, email, password);
   return fetch(`${baseUrl}/signup`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
