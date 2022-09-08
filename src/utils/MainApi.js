@@ -1,4 +1,5 @@
-export const baseUrl = 'https://api.findmovies.nomoredomains.xyz';
+// export const baseUrl = 'https://api.findmovies.nomoredomains.xyz';
+export const baseUrl = 'http://localhost:4000';
 
 function checkResponse(res) {
   if (res.ok) {
