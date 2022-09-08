@@ -4,3 +4,12 @@
     text-align: center;
     color: #A0A0A0;
 }
+
+@media screen and (max-width: 767px) {
+    .no-result {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+
