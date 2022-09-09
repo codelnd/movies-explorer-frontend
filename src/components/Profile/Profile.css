@@ -75,24 +75,35 @@
     outline: none;
     background: none;
     cursor: pointer;
-    transition: opacity 0.2s ease-in;
+    transition: all 0.2s ease-in;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
     text-align: center;
     color: #000;
+    visibility: visible;
 }
 
 .profile__button_invisible {
+   visibility: hidden;
     opacity: 0;
 }
 
 .profile__button:hover {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .profile__button_logout {
     color: #FF4062;
+}
+
+.profile__button_save_disabled {
+    color: #a0a0a0;
+}
+
+.profile__button_save_disabled:hover {
+    opacity: 1;
+    cursor: default;
 }
 
 @media screen and (max-width: 1279px) {
