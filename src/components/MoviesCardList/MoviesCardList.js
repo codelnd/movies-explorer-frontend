@@ -35,7 +35,7 @@ const MoviesCardList = ({
       <button
         type="button"
         onClick={onMore}
-        className={`preloader__button preloader__button_${
+        className={`more__button more__button_${
           isMoreButtonExist ? '' : 'invisible'
         }
           ${noResult || !isSearched ? 'invisible' : ''}`}

@@ -90,6 +90,7 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
               minLength="2"
               maxLength="30"
               required
+              autoComplete="off"
               value={value.username || ''}
               disabled={inputDisabled}
               onChange={handleInputValue}
@@ -105,6 +106,7 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
               placeholder="Введите e-mail"
               name="email"
               required
+              autoComplete="off"
               value={value.email || ''}
               disabled={inputDisabled}
               onChange={handleInputValue}

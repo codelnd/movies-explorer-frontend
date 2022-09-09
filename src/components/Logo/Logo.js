@@ -6,7 +6,11 @@ import logo from '../../images/logo.svg';
 const Logo = () => {
   return (
     <Link to="/" className="logo-link">
-      <img className="logo" src={logo} alt="логотип"></img>
+      <div className="outer circle">
+        <img className="logo" src={logo} alt="логотип"></img>
+        <span></span>
+        <span></span>
+      </div>
     </Link>
   );
 };
