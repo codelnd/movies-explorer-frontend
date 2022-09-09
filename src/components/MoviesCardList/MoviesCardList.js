@@ -11,9 +11,8 @@ const MoviesCardList = ({
   onMore,
   onSave,
   onRemove,
-                          isMoreButtonExist,
+  isMoreButtonExist,
 }) => {
-
   return (
     <section
       className={`movies-cardlist movies-cardlist_${
@@ -37,9 +36,7 @@ const MoviesCardList = ({
         type="button"
         onClick={onMore}
         className={`preloader__button preloader__button_${
-          isMoreButtonExist
-            ? ''
-            : 'invisible'
+          isMoreButtonExist ? '' : 'invisible'
         }
           ${noResult || !isSearched ? 'invisible' : ''}`}
       >

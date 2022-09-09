@@ -51,7 +51,7 @@ const Auth = ({
       </form>
       <button
         className={`auth__button auth__button_${!isValid ? 'disabled' : ''}`}
-        type='submit'
+        type="submit"
         form={name}
         disabled={!isValid}
       >
