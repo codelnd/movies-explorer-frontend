@@ -103,7 +103,7 @@ const useSearch = () => {
 
   function handleMoreButton() {
     if (width < TABLET_RESOLUTION) {
-      setShowedMovies(matchedMovies.slice(0, showedMovies.length + count * 2));
+      setShowedMovies(matchedMovies.slice(0, showedMovies.length + count * 5));
     } else {
       setShowedMovies(matchedMovies.slice(0, showedMovies.length + count));
     }

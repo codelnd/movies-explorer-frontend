@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a279eaea-d3b5-49ae-94bd-e1afd7387fed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useResize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useResize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +104,8 @@
       <workItem from="1662563903004" duration="1067000" />
       <workItem from="1662565039546" duration="605000" />
       <workItem from="1662628837995" duration="245000" />
-      <workItem from="1662629141147" duration="16116000" />
+      <workItem from="1662629141147" duration="20830000" />
+      <workItem from="1662714832850" duration="5036000" />
     </task>
     <servers />
   </component>

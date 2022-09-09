@@ -11,7 +11,7 @@ const MoviesCardList = ({
   onMore,
   onSave,
   onRemove,
-                            isMoreButtonExist,
+                          isMoreButtonExist,
 }) => {
 
   return (

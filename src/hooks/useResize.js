@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import {
-  DESKTOP_COUNT,
-  DESKTOP_RESOLUTION,
   FULLSCREEN_COUNT,
   FULLSCREEN_RESOLUTION,
   MOBILE_COUNT,
@@ -16,25 +14,21 @@ function useResize() {
   const [count, setCount] = useState(0);
   const [row, setRow] = useState(0);
 
-  useEffect(() => {
-    if (width > FULLSCREEN_RESOLUTION) {
-      setCount(FULLSCREEN_COUNT);
-      setRow(ROW);
-      return;
-    } else if (FULLSCREEN_RESOLUTION > width && width > DESKTOP_RESOLUTION) {
-      setCount(DESKTOP_COUNT);
-      setRow(ROW);
-      return;
-    } else if (DESKTOP_RESOLUTION > width && width > TABLET_RESOLUTION) {
-      setCount(TABLET_COUNT);
-      setRow(ROW);
-      return;
-    } else {
-      setCount(MOBILE_COUNT);
-      setRow(MOBILE_ROW);
-      return;
-    }
-  }, [width]);
+    useEffect(() => {
+      if (width > FULLSCREEN_RESOLUTION) {
+        setCount(FULLSCREEN_COUNT);
+        setRow(ROW);
+        return;
+      } else if (FULLSCREEN_RESOLUTION > width && width > TABLET_RESOLUTION) {
+        setCount(TABLET_COUNT);
+        setRow(ROW);
+        return;
+      } else {
+        setCount(MOBILE_COUNT);
+        setRow(MOBILE_ROW);
+        return;
+      }
+    }, [width]);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
