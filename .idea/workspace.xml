@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a279eaea-d3b5-49ae-94bd-e1afd7387fed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesCardList/MoviesCardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavTab/NavTab.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavTab/NavTab.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageNotFound/PageNotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageNotFound/PageNotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,23 +30,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Денис\\dev\\movies-explorer-frontend\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Денис\\dev\\movies-explorer-frontend\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -111,6 +101,7 @@
       <workItem from="1662628837995" duration="245000" />
       <workItem from="1662629141147" duration="20830000" />
       <workItem from="1662714832850" duration="16086000" />
+      <workItem from="1662733068633" duration="20000" />
     </task>
     <servers />
   </component>
