@@ -27,6 +27,7 @@ function App() {
     popupOpen,
     filmsCollection,
     inputDisabled,
+    setInputDisabled,
     setPopupOpen,
     handleRegister,
     handleLogin,
@@ -134,7 +135,11 @@ function App() {
               <Route
                 path="/signin"
                 element={
-                  <Login onLogin={handleLogin} inputDisabled={inputDisabled} />
+                  <Login
+                    onLogin={handleLogin}
+                    inputDisabled={inputDisabled}
+                    setInputDisabled={setInputDisabled}
+                  />
                 }
               />
               <Route
@@ -144,6 +149,7 @@ function App() {
                     confirm={confirm}
                     onRegister={handleRegister}
                     inputDisabled={inputDisabled}
+                    setInputDisabled={setInputDisabled}
                   />
                 }
               />

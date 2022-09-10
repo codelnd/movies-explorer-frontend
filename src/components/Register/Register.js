@@ -4,8 +4,8 @@ import FormInput from '../FormInput/FormInput';
 import Auth from '../Auth/Auth';
 import useValidation from '../../hooks/useValidation';
 
-function Register({ onRegister, inputDisabled, confirm }) {
-  const { error, isValid, checkErrors } = useValidation();
+function Register({ onRegister, inputDisabled, setInputDisabled, confirm }) {
+  const { error, isValid, setIsValid, checkErrors } = useValidation();
   const [userData, setUserData] = useState({});
 
   function handleUserData(name, value) {
@@ -24,7 +24,9 @@ function Register({ onRegister, inputDisabled, confirm }) {
       confirm={confirm}
       onRegister={onRegister}
       isValid={isValid}
+      setIsValid={setIsValid}
       checkErrors={checkErrors}
+      setInputDisabled={setInputDisabled}
     >
       <FormInput
         type="text"

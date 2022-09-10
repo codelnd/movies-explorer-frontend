@@ -163,6 +163,7 @@ function useAuth() {
     authError,
     currentUser,
     inputDisabled,
+    setInputDisabled,
     filmsCollection,
     handleRegister,
     handleLogin,

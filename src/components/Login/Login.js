@@ -4,8 +4,8 @@ import Auth from '../Auth/Auth';
 import FormInput from '../FormInput/FormInput';
 import useValidation from '../../hooks/useValidation';
 
-function Login({ onLogin, inputDisabled }) {
-  const { error, isValid, checkErrors } = useValidation();
+function Login({ onLogin, inputDisabled, setInputDisabled }) {
+  const { error, isValid, setIsValid, checkErrors } = useValidation();
   const [userData, setUserData] = useState({});
 
   function handleUserData(name, value) {
@@ -21,9 +21,11 @@ function Login({ onLogin, inputDisabled }) {
       link="Регистрация"
       path="/signup"
       isValid={isValid}
+      setIsValid={setIsValid}
       checkErrors={checkErrors}
       loginData={userData}
       onLogin={onLogin}
+      setInputDisabled={setInputDisabled}
     >
       <FormInput
         type="email"

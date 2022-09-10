@@ -67,7 +67,7 @@ function SearchForm({
           required
           ref={inputRef}
           name="search"
-          autocomplete="off"
+          autoComplete="off"
           pattern={SEARCH_REGEXP}
           onChange={handleInputValue}
         />

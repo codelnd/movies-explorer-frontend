@@ -14,6 +14,8 @@ const Auth = ({
   path,
   checkErrors,
   isValid,
+  setIsValid,
+  setInputDisabled,
   onRegister,
   registerData,
   onLogin,
@@ -21,11 +23,15 @@ const Auth = ({
 }) => {
   function handleRegisterSubmit(evt) {
     evt.preventDefault();
+    setInputDisabled(true);
+    setIsValid(false);
     onRegister(registerData);
   }
 
   function handleLoginSubmit(evt) {
     evt.preventDefault();
+    setInputDisabled(true);
+    setIsValid(false);
     onLogin(loginData);
   }
 
