@@ -5,6 +5,10 @@
     padding-bottom: 30px;
 }
 
+.movies-cardlist_invisible {
+    display: none;
+}
+
 .card__list {
     padding: 0;
     margin: 0;
@@ -15,7 +19,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 364px));
 }
 
-.preloader__button {
+.more__button {
     display: block;
     border: 1px solid #E8E8E8;;
     outline: none;
@@ -32,13 +36,15 @@
     margin: 80px auto auto;
 }
 
-.preloader__button_invisible {
+.more__button_invisible {
     display: none;
 }
 
-.preloader__button:hover {
+.more__button:hover {
     border: 1px solid #000;
-    background: #e8e8e8;
+    /*background: #e8e8e8;*/
+    background: black;
+    color: #FFFFFF;
 }
 
 @media screen and (max-width: 1279px) {
@@ -62,7 +68,7 @@
         gap: 16px;
     }
 
-    .preloader__button {
+    .more__button {
         width: 240px;
     }
 }

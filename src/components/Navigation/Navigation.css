@@ -1,3 +1,21 @@
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    85% {
+        transform: rotate(5deg);
+    }
+    95% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .nav {
     min-width: calc(100% - 38px);
     position: relative;
@@ -58,6 +76,7 @@
     border-radius: 3px;
     background-color: #000;
     color: #FFF;
+    animation: wiggle 2.5s infinite;
 }
 
 .nav__link_type_home {

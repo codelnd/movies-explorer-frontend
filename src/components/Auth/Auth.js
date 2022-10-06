@@ -1,6 +1,6 @@
 import React from 'react';
 import './Auth.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { motion } from 'framer-motion';
 
@@ -12,14 +12,27 @@ const Auth = ({
   question,
   link,
   path,
-  login,
+  checkErrors,
+  isValid,
+  setIsValid,
+  setInputDisabled,
+  onRegister,
+  registerData,
+  onLogin,
+  loginData,
 }) => {
-  const navigate = useNavigate();
-
-  function handleSubmit(evt) {
+  function handleRegisterSubmit(evt) {
     evt.preventDefault();
-    login();
-    navigate('/');
+    setInputDisabled(true);
+    setIsValid(false);
+    onRegister(registerData);
+  }
+
+  function handleLoginSubmit(evt) {
+    evt.preventDefault();
+    setInputDisabled(true);
+    setIsValid(false);
+    onLogin(loginData);
   }
 
   return (
@@ -34,14 +47,20 @@ const Auth = ({
       </Link>
       <h2 className="auth__title">{title}</h2>
       <form
-        className="auth__form"
+        className={`auth__form auth__form_${name}`}
+        onSubmit={name === 'login' ? handleLoginSubmit : handleRegisterSubmit}
+        onChange={checkErrors}
         name={name}
         id={name}
-        onSubmit={handleSubmit}
       >
         {children}
       </form>
-      <button className="auth__button" type="submit" form={name}>
+      <button
+        className={`auth__button auth__button_${!isValid ? 'disabled' : ''}`}
+        type="submit"
+        form={name}
+        disabled={!isValid}
+      >
         {button}
       </button>
       <div className="redirect">

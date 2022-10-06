@@ -10,8 +10,13 @@
 }
 
 .checkbox__label:hover {
+    color: #a0a0a0;
+}
+
+.checkbox__label:hover .checkbox {
     filter: brightness(1.03);
 }
+
 
 .input_type_checkbox {
     display: none;

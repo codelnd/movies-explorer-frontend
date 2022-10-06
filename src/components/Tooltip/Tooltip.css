@@ -1,0 +1,99 @@
+.tooltip {
+    min-width: 100%;
+    min-height: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, .3);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+}
+
+.tooltip_opened {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.tooltip__container {
+    width: 530px;
+    min-height: 330px;
+    margin: 0 auto;
+    background-color: #FFF;
+    position: fixed;
+    top: calc(100%/2 - 165px);
+    left: calc(100%/2 - 265px);
+    border-radius: 10px;
+}
+
+.tooltip__close-button {
+    padding: 0;
+    border: none;
+    outline: none;
+    width: 32px;
+    height: 32px;
+    background-image: url(../../images/close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    position: absolute;
+    top: -32px;
+    right: -32px;
+    transition: opacity .2s ease-in-out;
+}
+
+.tooltip__close-button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.tooltip__image {
+    width: 120px;
+    height: 120px;
+    margin: 50px auto;
+}
+
+.tooltip__image_success {
+    background-color: #a0a0a0;
+    mask-image: url(../../images/success.svg);
+}
+
+.tooltip__image_fail {
+    background-color: #ff4062;
+    mask-image: url(../../images/error.svg);
+}
+
+.tooltip__message {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    margin: 0 36px;
+    color: #000;
+}
+
+@media screen and (max-width: 600px) {
+    .tooltip__container {
+        width: 280px;
+        min-height: 320px;
+        top: calc(100%/2 - 161px);
+        left: calc(100%/2 - 141px);
+    }
+
+    .tooltip__close-button {
+        width: 20px;
+        height: 20px;
+        top: -32px;
+        right: 0;
+    }
+
+    .tooltip__message {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 22px;
+    }
+}
+
+

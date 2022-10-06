@@ -1,9 +1,17 @@
-import React from 'react';
+import { useState } from 'react';
 import './Login.css';
 import Auth from '../Auth/Auth';
 import FormInput from '../FormInput/FormInput';
+import useValidation from '../../hooks/useValidation';
 
-function Login({ loggedIn, login }) {
+function Login({ onLogin, inputDisabled, setInputDisabled }) {
+  const { error, isValid, setIsValid, checkErrors } = useValidation();
+  const [userData, setUserData] = useState({});
+
+  function handleUserData(name, value) {
+    setUserData({ ...userData, [name]: value });
+  }
+
   return (
     <Auth
       title="Рады видеть!"
@@ -12,27 +20,31 @@ function Login({ loggedIn, login }) {
       question="Ещё не зарегистрированы?"
       link="Регистрация"
       path="/signup"
-      loggedIn={loggedIn}
-      login={login}
+      isValid={isValid}
+      setIsValid={setIsValid}
+      checkErrors={checkErrors}
+      loginData={userData}
+      onLogin={onLogin}
+      setInputDisabled={setInputDisabled}
     >
       <FormInput
         type="email"
         name="email"
         labelText="E-mail"
         placeholder="Введите e-mail"
+        onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
-      <span className="auth__error-message auth__error-message_invisible">
-        Что-то пошло не так...
-      </span>
+      <span className="auth__error-message">{error.email}</span>
       <FormInput
         type="password"
         name="password"
         labelText="Пароль"
         placeholder="Введите пароль"
+        onUserData={handleUserData}
+        inputDisabled={inputDisabled}
       />
-      <span className="auth__error-message auth__error-message_invisible">
-        Что-то пошло не так...
-      </span>
+      <span className="auth__error-message">{error.password}</span>
     </Auth>
   );
 }

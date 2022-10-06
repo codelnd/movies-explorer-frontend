@@ -38,9 +38,15 @@
     margin-top: 69px;
 }
 
-.auth__button:hover {
-    box-shadow: 4px 4px 7px -4px rgba(0, 0, 0, 0.75);
+.auth__button_disabled {
+    cursor: default;
+    background: #e8e8e8;
+    color: #a0a0a0;
 }
+
+/*.auth__button:hover {*/
+/*    box-shadow: 4px 4px 7px -4px rgba(0, 0, 0, 0.75);*/
+/*}*/
 
 .redirect {
     margin-top: 16px;
