@@ -1,0 +1,10 @@
+.logo-link {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,25 @@
+.header {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header__wrapper {
+  padding: 18px 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .header__wrapper {
+    padding: 18px 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__wrapper {
+    padding: 18px 14px;
+  }
+}
+
