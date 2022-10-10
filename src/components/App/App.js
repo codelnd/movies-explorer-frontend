@@ -37,7 +37,9 @@ function App() {
 
   const {
     matchedMovies,
+    setMatchedMovies,
     showedMovies,
+    setShowedMovies,
     userMatchedMovies,
     setUserMatchedMovies,
     shortMovie,
@@ -128,6 +130,8 @@ function App() {
                       loggedIn={loggedIn}
                       onLogout={handleLogout}
                       onUpdate={handleUpdateUser}
+                      setMatchedMovies={setMatchedMovies}
+                      setShowedMovies={setShowedMovies}
                     />
                   </ProtectedRoute>
                 }

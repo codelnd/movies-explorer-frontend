@@ -6,7 +6,13 @@ import { CurrentUserContext } from '../CurrentUserContext/CurrentUserContext';
 import { useLocation } from 'react-router-dom';
 import useValidation from '../../hooks/useValidation';
 
-function Profile({ loggedIn, onUpdate, onLogout }) {
+function Profile({
+  loggedIn,
+  onUpdate,
+  onLogout,
+  setMatchedMovies,
+  setShowedMovies,
+}) {
   const currentUser = useContext(CurrentUserContext);
   const location = useLocation();
   const { checkErrors, isValid, setError, setIsValid } = useValidation();
@@ -59,6 +65,8 @@ function Profile({ loggedIn, onUpdate, onLogout }) {
 
   function handleLogout() {
     onLogout(currentUser.email);
+    setMatchedMovies([]);
+    setShowedMovies([]);
   }
 
   return (

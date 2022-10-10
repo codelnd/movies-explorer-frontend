@@ -111,7 +111,9 @@ const useSearch = () => {
 
   return {
     matchedMovies,
+    setMatchedMovies,
     showedMovies,
+    setShowedMovies,
     userMatchedMovies,
     setUserMatchedMovies,
     shortMovie,
@@ -122,7 +124,6 @@ const useSearch = () => {
     setIsUsersFilmsSearched,
     storageCheckbox,
     storageWord,
-    setMatchedMovies,
     setShortMovie,
     filterMovies,
     filterSavedMovies,
