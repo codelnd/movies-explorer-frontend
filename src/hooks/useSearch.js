@@ -124,6 +124,7 @@ const useSearch = () => {
     setIsUsersFilmsSearched,
     storageCheckbox,
     storageWord,
+    setStorageWord,
     setShortMovie,
     filterMovies,
     filterSavedMovies,

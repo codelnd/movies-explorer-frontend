@@ -50,6 +50,7 @@ function App() {
     setIsUsersFilmsSearched,
     storageCheckbox,
     storageWord,
+    setStorageWord,
     setShortMovie,
     filterMovies,
     filterSavedMovies,
@@ -132,6 +133,7 @@ function App() {
                       onUpdate={handleUpdateUser}
                       setMatchedMovies={setMatchedMovies}
                       setShowedMovies={setShowedMovies}
+                      setStorageWord={setStorageWord}
                     />
                   </ProtectedRoute>
                 }

@@ -12,6 +12,7 @@ function Profile({
   onLogout,
   setMatchedMovies,
   setShowedMovies,
+  setStorageWord,
 }) {
   const currentUser = useContext(CurrentUserContext);
   const location = useLocation();
@@ -67,6 +68,7 @@ function Profile({
     onLogout(currentUser.email);
     setMatchedMovies([]);
     setShowedMovies([]);
+    setStorageWord('');
   }
 
   return (
