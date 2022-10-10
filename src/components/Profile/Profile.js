@@ -66,7 +66,6 @@ function Profile({
   function handleLogout() {
     onLogout(currentUser.email);
     setMatchedMovies([]);
-    setShowedMovies([]);
   }
 
   return (
