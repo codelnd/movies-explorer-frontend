@@ -13,22 +13,24 @@ function Techs({ children, studentRef }) {
           <h3 className="about-me__title-mini">Фронтенд-разработчик, 28 лет</h3>
           <p className="about-me__paragraph">
             Я родился и живу в городе Барнаул, закончил строительный факультет
-            АлтГТУ. Занимаюсь строительством и иногда беру заказы на фрилансе.
-            После окончания курса планирую полноценно погрузиться в
-            веб-разработку
+            АлтГТУ. В web-разработке больше всего люблю неограниченный полет
+            фантазии, в процессе которого могу создавать удобные сервисы для
+            взаимодействия с пользователями. Ежедневно занимаюсь разработкой и
+            улучшением собственных проектов. Так же изучаю новые технологии и
+            фреймворки.
           </p>
           <div className="about-me__links">
             <a
               className="about-me__link"
-              href="https://ru-ru.facebook.com"
+              href="https://www.linkedin.com/in/denis-bezukladnikov-9795a1253/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Facebook
+              LinkedIn
             </a>
             <a
               className="about-me__link"
-              href="https://github.com/Denis3094"
+              href="https://github.com/codelnd"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -37,13 +39,10 @@ function Techs({ children, studentRef }) {
           </div>
         </div>
         <img className="about-me__img" src={myPhoto} alt="мое фото" />
-        {Portfolio()}
+        <Portfolio />
       </div>
     </section>
   );
 }
 
 export default Techs;
-
-
-
