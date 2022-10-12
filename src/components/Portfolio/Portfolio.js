@@ -8,7 +8,7 @@ function Portfolio() {
       <ul className="about-me__list">
         <li className="about-me__list-item">
           <a
-            href="https://github.com/Denis3094/how-to-learn"
+            href="https://codelnd.github.io/how-to-learn/"
             className="about-me__portfolio-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -18,7 +18,7 @@ function Portfolio() {
         </li>
         <li className="about-me__list-item">
           <a
-            href="https://denis3094.github.io/russian-travel"
+            href="https://codelnd.github.io/russian-travel/"
             className="about-me__portfolio-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -28,7 +28,7 @@ function Portfolio() {
         </li>
         <li className="about-me__list-item">
           <a
-            href="https://github.com/Denis3094/react-mesto-api-full/tree/main/frontend"
+            href="https://codelnd.github.io/mesto/"
             className="about-me__portfolio-link"
             target="_blank"
             rel="noopener noreferrer"
