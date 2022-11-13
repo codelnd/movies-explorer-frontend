@@ -52,7 +52,7 @@ npm install
 ## Планы по доработке:
 - Добавить типизацию на TypeScript
 - Переписать запросы на Async/Await (ES7)
-- Рефакторинг стилей на Sass / Styled Components
+- Рефакторинг стилей на Styled Components
 - Добавить Redux или MobX для стейт менеджмента
 
 
@@ -64,6 +64,8 @@ npm run build // Сборка проекта
 
 ## Ссылки:
 
-[Ссылка на Pull Request](https://github.com/codelnd/movies-explorer-frontend/pull/2)
+[Pull Request](https://github.com/codelnd/movies-explorer-frontend/pull/2)
 
-Проект: *https://findmovies.nomoredomains.xyz*
+**https://findmovies.nomoredomains.xyz**
+
+*зажмите Command (MacOS) или Ctrl (Windows) при клике по ссылке, чтобы перейти по ней в новом окне.
