@@ -23,7 +23,7 @@ function Footer() {
           <li className="footer__list-item">
             <a
               className="footer__list-link"
-              href="https://github.com/Denis3094"
+              href="https://github.com/codelnd"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -33,11 +33,11 @@ function Footer() {
           <li className="footer__list-item">
             <a
               className="footer__list-link"
-              href="https://ru-ru.facebook.com"
+              href="https://www.linkedin.com/in/codenis/"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Facebook
+              LinkedIn
             </a>
           </li>
         </ul>
