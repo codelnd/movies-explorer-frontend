@@ -13,13 +13,13 @@ function Techs({ children, techsRef }) {
             дипломном проекте.
           </p>
           <ul className="techs__list">
-            <li className="techs__list-item">HTML</li>
-            <li className="techs__list-item">CSS</li>
-            <li className="techs__list-item">JS</li>
-            <li className="techs__list-item">React</li>
+            <li className="techs__list-item">JavaScript</li>
+            <li className="techs__list-item">React.js</li>
             <li className="techs__list-item">Git</li>
             <li className="techs__list-item">Express.js</li>
-            <li className="techs__list-item">mongoDB</li>
+            <li className="techs__list-item">MongoDB</li>
+            <li className="techs__list-item">HTML</li>
+            <li className="techs__list-item">CSS</li>
           </ul>
         </div>
       </div>
@@ -28,6 +28,3 @@ function Techs({ children, techsRef }) {
 }
 
 export default Techs;
-
-
-
