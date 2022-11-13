@@ -50,7 +50,7 @@
     background-size: cover;
     background: transparent url(../../images/save_disable.svg) no-repeat center;
     border-radius: 50%;
-    transition: all 0.1s;
+    transition: all 0.01s;
     cursor: pointer;
 }
 
@@ -63,7 +63,6 @@
     background-size: cover;
     background: url(../../images/save.svg) no-repeat center;
     border-radius: 50%;
-    transition: all 0.1s;
     cursor: pointer;
 }
 
@@ -85,7 +84,7 @@
 }
 
 .card__button_remove:hover {
-    transform: rotate(360deg);
+    filter: invert(50%);
 }
 
 .card__img {
