@@ -10,6 +10,7 @@
     gap: 151px;
     padding-top: 160px;
     padding-bottom: 30px;
+    transition: all .5s;
 }
 
 .promo__title {
